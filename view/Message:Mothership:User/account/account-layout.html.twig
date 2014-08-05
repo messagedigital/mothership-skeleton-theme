@@ -1,0 +1,30 @@
+{% extends '<Add vendor name>:General::templates/base' %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{% javascripts
+	'@Message:Mothership:ControlPanel::resources:assets:js:filteredSelect.jquery.js'
+	'@Message:Mothership:User::resources/assets/js/state-filter.js'
+
+	output='/assets/js/ms_account-*.js'
+	filter='?jsmin'
+	%}
+	<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock %}
+
+{% block title %}Your Account | {{ app.cfg.app.name }}{% endblock %}
+
+{% block content %}
+	<main class="content">
+		{% if user %}
+			<h1>Hello {{ user.name }}</h1>
+		{% endif %}
+		<section class="account">
+			{% block account_content %}
+			{% endblock %}
+			{% block account_menu %}
+			{% endblock %}
+		</section>
+	</main>
+{% endblock %}

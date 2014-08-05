@@ -1,0 +1,27 @@
+<header class="header" role="banner" id="top">
+	{# Site logo #}
+	<h1 class="logo">
+		<a href="/">Real Stars are Rare</a>
+	</h1>
+
+	{# Shop Access #}
+	{% block shopaccess %}
+		{% include '@<Add vendor name>:General::module:header:shopaccess' %}
+	{% endblock %}
+
+	{# Main navigation #}
+	{% block navigation %}
+		{% include '@<Add vendor name>:General::module:header:navigation' %}
+	{% endblock %}
+
+	{# Site search #}
+	{% block search %}
+		{% include '@<Add vendor name>:General::module:header:search' %}
+	{% endblock %}
+
+	{# Basket #}
+	{% block basket %}
+		{{ render(controller('<Add vendor name>:General::Controller:Module:Shop#basket')) }}
+	{% endblock %}
+
+</header>

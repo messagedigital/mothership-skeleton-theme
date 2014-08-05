@@ -1,0 +1,34 @@
+<h3>{{ address.type|capitalize }}</h3>
+<dl class="order-details">
+	<dt>{{ 'ms.commerce.order.address.name'|trans }}</dt>
+		{% if order.user %}
+		<dd><a href="{{ url('ms.cp.user.admin.detail.edit', {'userID': order.user.id }) }}">
+			{{ address.title }} {{ address.forename }} {{ address.surname }}
+		</a></dd>
+		{% elseif user %}
+			<dd>{{ user.title }} {{ user.forename }} {{ user.surname }}</dd>
+		{% else %}
+			<dd><em>Unknown</em></dd>
+		{% endif %}
+	{% for key, line in address.lines %}
+		{% if not line is empty %}
+	<dt>{{ 'ms.commerce.order.address.line'|trans({'number': key}) }}</dt>
+		<dd>{{ line }}</dd>
+		{% endif %}
+	{% endfor %}
+	<dt>{{ 'ms.commerce.order.address.town'|trans }}</dt>
+		<dd>{{ address.town }}</dd>
+	<dt>{{ 'ms.commerce.order.address.postcode'|trans }}</dt>
+		<dd>{{ address.postcode }}</dd>
+	{% if not address.state is empty %}
+	<dt>{{ 'ms.commerce.order.address.state'|trans }}</dt>
+		<dd>{{ address.state }}</dd>
+	{% endif %}
+	<dt>{{ 'ms.commerce.order.address.country'|trans }}</dt>
+		<dd>{{ address.country }}</dd>
+	{% if not address.telephone is empty %}
+	<dt>{{ 'ms.commerce.order.address.telephone'|trans }}</dt>
+		<dd>{{ address.telephone }}</dd>
+	{% endif %}
+</dl>
+

@@ -1,0 +1,213 @@
+/* ======================================================= */
+/*                                                         */
+/*                                                         */
+/*    Mothership Account  CSS                              */
+/*                                                         */
+/*                                                         */
+/* ======================================================= */
+/*
+/*
+/*    Development by Message
+/*    http://www.message.co.uk
+/*
+/*    Style Sheet v1.0
+/*    Created by Richard McCartney
+/*
+/*
+/* ======================================================= */
+
+
+.account {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 0 100px;
+    margin: 0 0 30px;
+}
+
+.account,
+.account * {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.account .row {
+    float: left;
+    width: 100%;
+    margin: 0 0 50px;
+}
+
+.account .column {
+    float: left;
+    width: 50%;
+    padding: 0 50px 0 0;
+}
+
+.account .column.right {
+    padding: 0 0 0 50px;
+}
+
+.account h1,
+.account h2,
+.account h3,
+.account h4 {
+    float: left;
+    width: 100%;
+}
+
+.account > h1 {
+    width: 100%;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.account p {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 15px;
+}
+
+.account ul {
+    list-style-type: none;
+}
+
+.account button {
+    float: right;
+}
+
+.account th,
+.account td {
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid #CCC;
+    padding: 30px 0;
+}
+
+.account img {
+    margin: 0;
+    max-width: 80px;
+}
+
+/* Returns */
+
+.account .return {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.account .return .hide {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .account .column,
+    .account .column.right {
+        width: 100%;
+        padding: 0 0 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .account {
+        padding: 0 40px;
+    }
+
+    .account .row {
+        margin: 0;
+    }
+
+    .account .column,
+    .account .column.right {
+        width: 100%;
+    }
+
+    .account thead,
+    .account th {
+        display: none;
+    }
+
+    .account tr {
+        float: left;
+        width: 100%;
+        border: 1px solid #CCC;
+        border-bottom: none;
+        margin-bottom: 20px;
+    }
+
+    .account tr:nth-of-type(odd) {
+        background: #FFF;
+    }
+
+    .account td {
+        float: left;
+        width: 100%;
+        display: block;
+        padding-left: 50%;
+        text-align: left;
+        position: relative;
+    }
+
+    .account .item {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .account .item img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .account td:before {
+        display: block;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+        width: 50%;
+        content: '';
+        text-indent: 20px;
+    }
+
+    .account .order-no:before {
+        content: 'Order No.';
+    }
+
+    .account .date:before {
+        content: 'Date';
+    }
+
+    .account .description:before {
+        content: 'Description';
+    }
+
+    .account .order-status:before {
+        content: 'Status';
+    }
+
+    .account .qty:before {
+        content: 'Quantity';
+    }
+
+    .account .unit-price:before {
+        content: 'Price';
+    }
+
+    .account .total:before {
+        content: 'Total';
+    }
+
+    .account .return {
+        width: 100%;
+        padding-left: 0;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 420px) {
+
+}

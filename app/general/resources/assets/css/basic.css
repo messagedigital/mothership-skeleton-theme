@@ -1,0 +1,427 @@
+/*/* ======================================================= */
+/*                                                         */
+/*                                                         */
+/*    Skeleton theme                                       */
+/*                                                         */
+/*                                                         */
+/* ======================================================= */
+/*
+/*
+/*    Development by Message
+/*    http://www.message.co.uk
+/*
+/*    Style Sheet v1.0
+/*    Created by Richard McCartney
+/*
+/*
+/* ======================================================= */
+
+
+* {
+	margin: 0;
+	padding: 0;
+	text-rendering: optimizeLegibility;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: none;
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html,
+body {
+
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	position: relative;
+	min-height: 100%;
+	height: 100%;
+}
+
+/* Text and links
+---------------------------------------------------------- */
+
+p {
+
+}
+
+strong,
+b {
+
+}
+
+i {
+
+}
+
+a {
+
+}
+
+a:hover {
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+blockquote {
+
+}
+
+blockquote p {
+
+}
+
+blockquote p:before {
+	content: open-quote;
+	content: '“';
+}
+
+blockquote p:after {
+	content: close-quote;
+	content: '”';
+}
+
+blockquote footer {
+
+}
+
+
+/* Other text elements */
+
+
+u {
+
+}
+
+s,
+small {
+
+}
+
+cite {
+
+}
+
+
+/* Image and objects elements
+---------------------------------------------------------- */
+
+
+img {
+
+}
+
+figure {
+
+}
+
+figure img {
+
+}
+
+figure caption {
+
+}
+
+object,
+embed,
+video,
+audio {
+
+}
+
+
+/* Form elements
+---------------------------------------------------------- */
+
+
+form {
+
+}
+
+.field {
+
+}
+
+.inline {
+
+}
+
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+
+}
+
+select {
+
+}
+
+textarea {
+
+}
+
+input[type="checkbox"],
+input[type="radio"],
+input[type="image"] {
+
+}
+
+label {
+
+}
+
+button,
+.button {
+
+}
+
+
+/* Hover and active states */
+
+input:hover,
+textarea:hover,
+select:hover {
+
+}
+
+input[type]:focus,
+textarea:focus,
+select:focus,
+select:active {
+
+}
+
+button:hover,
+.button:hover {
+
+}
+
+button:active,
+.button:active {
+
+}
+
+
+/* Button styles
+---------------------------------------------------------- */
+
+
+.continue,
+.purchase,
+.accept {
+
+}
+
+.continue:hover,
+.purchase:hover,
+.accept:hover {
+
+}
+
+
+.back.button,
+.cancel.button {
+
+}
+
+.back.button:hover,
+.cancel.button:hover {
+
+}
+
+
+/* Table styles
+---------------------------------------------------------- */
+
+
+table {
+
+}
+
+table th,
+table td {
+
+}
+
+
+/* Lists
+---------------------------------------------------------- */
+
+
+ul,
+ol {
+
+}
+
+ul li,
+ol li {
+
+}
+
+dl {
+
+}
+
+dt,
+dd {
+
+}
+
+dt {
+
+}
+
+dd {
+
+}
+
+
+/* Feedback
+---------------------------------------------------------- */
+
+
+.feedback {
+
+}
+
+.feedback p {
+
+}
+
+.error {
+
+}
+
+.warning {
+
+}
+
+.success {
+
+}
+
+.notice {
+
+}
+
+
+/* Loading spinner
+---------------------------------------------------------- */
+
+
+.spinner {
+	position: absolute;
+	top: 12px;
+	right: 16px;
+	z-index: 1000;
+	width: 30px;
+	height: 30px;
+	border: 5px solid rgba(51,51,51,0.15);
+	border-radius: 100%;
+	-webkit-animation: rotation .6s infinite linear;
+	-moz-animation: rotation .6s infinite linear;
+	-o-animation: rotation .6s infinite linear;
+	animation: rotation .6s infinite linear;
+}
+
+.spinner:before {
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 5px solid rgba(51,51,51,0.8);
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 5px solid transparent;
+	border-radius: 100%;
+	content: "";
+}
+
+
+/* Animations
+---------------------------------------------------------- */
+
+
+/* Rotation */
+
+
+@-webkit-keyframes rotation {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(359deg);
+	}
+}
+
+@-moz-keyframes rotation {
+	from {
+		-moz-transform: rotate(0deg);
+	}
+
+	to {
+		-moz-transform: rotate(359deg);
+	}
+}
+
+@-o-keyframes rotation {
+	from {
+		-o-transform: rotate(0deg);
+	}
+
+	to {
+		-o-transform: rotate(359deg);
+	}
+}
+
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(359deg);
+	}
+}

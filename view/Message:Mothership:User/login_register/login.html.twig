@@ -1,0 +1,26 @@
+{% extends '<Add vendor name>:General::templates:base' %}
+
+{% block title %}{{ 'ms.user.login.title'|trans }} | {{ app.cfg.app.name }}{% endblock %}
+
+{% block content %}
+	<main class="content">
+		<h1>{{ 'ms.user.login.title'|trans }}</h1>
+		<section class="account">
+			<div class="column">
+				<h2>{{ app.cfg.app.name }} members</h2>
+				{% block form %}
+					{{ render(controller('Message:User::Controller:Authentication#login', {
+					redirectURL           : refererUrl,
+					forgottenPasswordRoute: 'ms.user.password.request'
+					})) }}
+				{% endblock %}
+			</div>
+			<div class="column right">
+				<h2>If you're new to the website&hellip;</h2>
+				{% block register_link %}
+					<p><a href="{{ url('ms.user.register') }}">{{ 'ms.user.login.register-link-text'|trans }}</a></p>
+				{% endblock %}
+			</div>
+		</section>
+	</main>
+{% endblock %}

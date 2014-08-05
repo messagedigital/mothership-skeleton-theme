@@ -1,0 +1,20 @@
+{% extends 'Message:Mothership:User::account:account-layout' %}
+
+{% block account_content %}
+	<div class="column">
+		<h3>Order history</h3>
+		{% set orderLink = 'ms.user.order.detail'%}
+		{% set userLink = 'ms.user.account'%}
+		{% include 'Message:Mothership:Commerce::order:order:summary' %}
+	</div>
+{% endblock %}
+
+{% block account_menu %}
+	<div class="column right">
+		<h3>Your account</h3>
+		<ul>
+			<li><a href="{{ url('ms.user.edit') }}">Edit account details and settings</a></li>
+			<li><a href="{{ url('ms.user.order.listing') }}">Show order history</a></li>
+		</ul>
+	</div>
+{% endblock %}

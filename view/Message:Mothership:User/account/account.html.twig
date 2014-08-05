@@ -1,0 +1,30 @@
+{% extends 'Message:Mothership:User::account:account-layout' %}
+
+{% block account_content %}
+	<div class="column">
+		<h3>Account Detail</h3>
+		<ul>
+			<li><span>Name</span> {{user.forename}} {{ user.surname }}</li>
+			<li><span>E-Mail-Address</span> {{ user.email }}</li>
+		</ul>
+		{% if billingAddress %}
+			{% set address = billingAddress %}
+			{% include 'Message:Mothership:Commerce::order:detail:address:detail' %}
+		{% endif %}
+		{% if deliveryAddress %}
+			{% set address = deliveryAddress %}
+			{% include 'Message:Mothership:Commerce::order:detail:address:detail' %}
+		{% endif %}
+		<p>Send me E-Mail updates? {{ subscribed }}</p>
+	</div>
+{% endblock %}
+
+{% block account_menu %}
+	<div class="column right">
+		<h3>Your account</h3>
+		<ul>
+			<li><a href="{{ url('ms.user.edit') }}">Edit account details and settings</a></li>
+			<li><a href="{{ url('ms.user.order.listing') }}">Show order history</a></li>
+		</ul>
+	</div>
+{% endblock %}

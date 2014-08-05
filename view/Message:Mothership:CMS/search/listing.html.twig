@@ -1,0 +1,34 @@
+{% extends '::search:layout' %}
+
+{% block heading %}Search Results for '{{ termsString }}'{% endblock %}
+
+{% block listing %}
+{{ parent() }} {# Allows installation to add stuff to top of content by overriding layout file #}
+
+<ul class="search-results">
+{% for page in pages %}
+	<li>
+		{% set url = url('ms.cms.frontend', {slug: page.slug ?: '/' |trim('/')}) %}
+		<a href="{{ url }}">
+			{% if page.content.product %}
+				{% set image = page.content.gallery.all[0].image ?: page.content.product.product.product.image %}
+				{{ getResizedImage(image, 150, 150) }}
+				<span class="details">
+					<h2>{{ page.title }}</h2>
+					<span class="url">{{ url }}</span>
+					<p>{{ page.excerpt }}</p>
+				</span>
+			{% else %}
+				<h2>{{ page.title }}</h2>
+				<span class="url">{{ url }}</span>
+				<p>{{ page.excerpt }}</p>
+			{% endif %}
+		</a>
+	</li>
+{% else %}
+	<li class="no-result">
+		<p>No pages found.</p>
+	</li>
+{% endfor %}
+</ul>
+{% endblock %}

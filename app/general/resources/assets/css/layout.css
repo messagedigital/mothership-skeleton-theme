@@ -1,0 +1,66 @@
+/* ======================================================= */
+/*                                                         */
+/*                                                         */
+/*    Skeleton theme                                       */
+/*                                                         */
+/*                                                         */
+/* ======================================================= */
+/*
+/*
+/*    Development by Message
+/*    http://www.message.co.uk
+/*
+/*    Layout Style Sheet v1.0
+/*    Created by Richard McCartney
+/*
+/*
+/* ======================================================= */
+
+
+.container {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+.inner-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: margin .4s;
+         -o-transition: margin .4s;
+            transition: margin .4s;
+}
+
+.container,
+.content,
+.row {
+    position: relative;
+    float: left;
+	width: 100%;
+    height: auto;
+}
+
+.content,
+.row {
+    overflow: hidden;
+}
+
+.header {
+    z-index: 2;
+    float: left;
+    width: 100%;
+}
+
+.content {
+
+}
+
+.footer {
+    position: relative;
+    float: left;
+    width: 100%;
+}

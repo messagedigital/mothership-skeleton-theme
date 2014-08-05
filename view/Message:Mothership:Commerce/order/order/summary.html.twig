@@ -1,0 +1,31 @@
+{% if not orders is empty %}
+	<table class="order-listing">
+		<thead>
+		<tr>
+			<th><span>Date</span></th>
+			<th><span>Order No.</span></th>
+			<th><span>Status</span></th>
+			<th><span>Total</span></th>
+		</tr>
+		</thead>
+		<tbody>
+			{% for order in orders %}
+				<tr>
+					<td class="date">{{ order.authorship.createdAt|date }}</td>
+					<td class="order-no">
+						{% if orderLink is defined %}
+							<a href="{{ url(orderLink, {orderID: order.id}) }}">{{ order.id }}</a>
+						{% else %}
+							{{ order.id }}
+						{% endif %}
+
+					</td>
+					<td class="order-status">{{ order.status }}</td>
+					<td class="total">{{ order.totalGross|price(order.currencyID) }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% else %}
+	<p>{{ 'ms.commerce.order.order.none'|trans }}</p>
+{% endif %}
