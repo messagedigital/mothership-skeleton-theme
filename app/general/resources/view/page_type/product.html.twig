@@ -1,4 +1,4 @@
-{% extends '<Add vendor name>:General::templates/base' %}
+{% extends 'App:General::templates:base' %}
 
 {% block content %}
 	<main class="content" id="content" role="main">
@@ -6,13 +6,13 @@
 		<div class="row">
 			{# Product info #}
 			{% block productinfo %}
-				{% include '<Add vendor name>:General::module:product:product_info' %}
+				{% include '@App:General::module:product:product_info' %}
 			{% endblock %}
 
 			{# Product gallery #}
 			{% block gallery %}
 				{{
-					render(controller('<Add vendor name>:General::Controller:Module:Gallery#gallery', {
+					render(controller('App:General::Controller:Module:Gallery#gallery', {
 						product: product,
 						gallery: content.gallery
 					}))
@@ -22,12 +22,12 @@
 		<div class="row">
 			{# Product tabs #}
 			{% block tabs %}
-				{% include '<Add vendor name>:General::module:product:tabs' %}
+				{% include '@App:General::module:product:tabs' %}
 			{% endblock %}
 		</div>
 		{# Cross sell #}
 		{{
-			render(controller('<Add vendor name>:General::Controller:Module:Shop#crossSell', {
+			render(controller('App:General::Controller:Module:Shop#crossSell', {
 				crossSell: content.cross_sell
 			}))
 		}}

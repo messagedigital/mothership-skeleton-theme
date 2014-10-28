@@ -1,4 +1,4 @@
-{% extends '<Add vendor name>:General::templates/base' %}
+{% extends 'App:General::templates/base' %}
 
 {% block javascripts %}
 	{{ parent() }}
@@ -17,14 +17,19 @@
 
 {% block content %}
 	<main class="content">
-		{% if user %}
-			<h1>Hello {{ user.name }}</h1>
-		{% endif %}
 		<section class="account">
-			{% block account_content %}
-			{% endblock %}
-			{% block account_menu %}
-			{% endblock %}
+			<nav class="col-3">
+				{% block account_menu %}
+					<ul>
+						<li><a href="{{ url('ms.user.account') }}">Account</a></li>
+						<li><a href="{{ url('ms.user.order.listing') }}">Orders</a></li>
+					</ul>
+				{% endblock %}
+			</nav>
+			<div class="col-9">
+				{% block account_content %}
+				{% endblock %}
+			</div>
 		</section>
 	</main>
 {% endblock %}

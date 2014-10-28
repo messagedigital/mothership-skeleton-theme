@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\Task;
+namespace App\General\Task;
 
 use Message\Cog\Console\Task\Task;
 use Message\Mothership\CMS\Page\Page;

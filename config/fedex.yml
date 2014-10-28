@@ -1,0 +1,16 @@
+test-mode: false
+api-key:
+api-password:
+meter-number:
+account-number:
+terms-of-sale: DDU
+payment:
+  transportation:
+    type: SENDER
+    account-number: 510087569
+  duties:
+    type: RECIPIENT
+label:
+  format: COMMON2D
+  image-type: PDF
+  stock-type:

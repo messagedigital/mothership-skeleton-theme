@@ -1,9 +1,9 @@
-<section class="tabs row">
+<section class="tabs col-12">
 	{# Details #}
 	<div class="details">
 		<h3>Details</h3>
 		{% if content.details.value %}
-			{{ content.details }}
+			{{ content.details | raw }}
 		{% else %}
 			<p>{{ product.description | nl2br }}</p>
 		{% endif %}
@@ -13,7 +13,7 @@
 	{% if product.details.sizing.value %}
 		<div class="fitting">
 			<h3>Fitting guide</h3>
-			{{ product.details.sizing }}
+			{{ product.details.sizing | raw }}
 		</div>
 	{% endif %}
 
@@ -21,7 +21,7 @@
 	{% if content.shipping.value %}
 		<div class="shipping">
 			<h3>Shipping &amp; returns</h3>
-			{{ content.shipping }}
+			{{ content.shipping | raw }}
 		</div>
 	{% endif %}
 

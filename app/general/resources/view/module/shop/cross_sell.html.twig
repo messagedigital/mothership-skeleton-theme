@@ -1,8 +1,11 @@
 <section class="cross-sell">
+	<div class="row">
 	{% if cross_sell | length > 0 %}
-		<h3>You May Also Like</h3>
+		<div class="col-12">
+			<h3>You May Also Like</h3>
+		</div>
 		{% for product in cross_sell %}
-			<div class="product">
+			<div class="product col-3">
 				{%
 					set cross_sell_page = mapper.getPageForProduct(product.product.product, {
 						(product.option.name): product.option.value
@@ -11,14 +14,11 @@
 				{% set image = cross_sell_page.content.gallery.all[0].image ?: product.product.product.image %}
 				<a href="{{ cross_sell_page.slug }}">
 					{{ getResizedImage(image, 360,455) }}
-					<div class="details">
-						<div class="alignment-mid">
-							<h3>{{ product.product.product.displayName }}</h3>
-							<h5>{{ product.option.value }} <span class="price">{{ product.product.product.getPrice | price }}</span></h5>
-						</div>
-					</div>
+					<h3>{{ product.product.product.displayName }}</h3>
+					<h5>{{ product.option.value }} <span class="price">{{ product.product.product.getPrice | price }}</span></h5>
 				</a>
 			</div>
 		{% endfor %}
 	{% endif %}
+	</div>
 </section>

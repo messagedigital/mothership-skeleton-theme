@@ -1,0 +1,13 @@
+Options -Indexes
+
+RewriteEngine on
+RewriteBase /
+
+# Strip www. from URLs
+RewriteCond %{HTTP_HOST} ^www.realstarsarerare.com [NC]
+RewriteRule ^(.*)$ http://realstarsarerare.com/$1 [L,R=301]
+
+# Direct all requests to Mothership system
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L,QSA]

@@ -1,9 +1,9 @@
 <?php
 
-namespace RSAR\General\Bootstrap;
+namespace App\General\Bootstrap;
 
 use Message\Cog\Bootstrap\TasksInterface;
-use RSAR\General\Task;
+use App\General\Task;
 
 class Tasks implements TasksInterface
 {

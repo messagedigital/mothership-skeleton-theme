@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\DispatchMethod;
+namespace App\General\DispatchMethod;
 
 use Message\Mothership\Commerce\Order\Entity\Dispatch\MethodInterface;
 

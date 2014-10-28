@@ -1,4 +1,4 @@
-{% extends '<Add vendor name>:General::templates/base' %}
+{% extends 'App:General::templates/base' %}
 
 {% block title %}Checkout | {{ app.cfg.app.name }}{% endblock %}
 
@@ -7,7 +7,7 @@
 
 	{% stylesheets
 
-	output='/assets/css/rsar_checkout-*.css'
+	output='/assets/css/nucleus_checkout-*.css'
 	filter='csscogulerewrite,?cssmin'
 	%}
 	<link rel="stylesheet" href="{{ asset_url }}">

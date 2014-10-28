@@ -1,0 +1,45 @@
+{
+	"description": "Real Stars Are Rare",
+	"homepage": "http://realstarsarerare.com",
+	"authors": [
+		{
+			"name" : "The Message Development Team",
+			"email": "dev@message.co.uk"
+		}
+	],
+	"repositories": [
+		{
+			"type": "composer",
+			"url" : "http://packages.message.co.uk"
+		}
+	],
+	"require": {
+		"message/cog"                     : "~3.2",
+		"message/cog-mothership-cms"      : "~2.3",
+		"message/cog-mothership-ecommerce": "~2.1.1",
+		"message/cog-mothership-returns"  : "~4.0",
+		"message/cog-mothership-mailing"  : "~1.2",
+		"message/cog-mothership-stripe"   : "~1.0",
+		"message/twitter"                 : "~1.0"
+	},
+	"config": {
+		"bin-dir": "bin"
+	},
+	"scripts": {
+		"post-package-install": [
+			"Message\\Cog\\Config\\FixtureManager::postInstall"
+		],
+		"pre-package-update": [
+			"Message\\Cog\\Config\\FixtureManager::preUpdate"
+		],
+		"post-package-update": [
+			"Message\\Cog\\Config\\FixtureManager::postUpdate"
+		]
+	},
+	"autoload": {
+		"psr-4": {
+			""                 :  "app/",
+			"App\\General\\"  : "app/general/src"
+		}
+	}
+}

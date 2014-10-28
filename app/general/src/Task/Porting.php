@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\Task;
+namespace App\General\Task;
 
 use Message\Cog\Console\Task\Task;
 use Message\Mothership\CMS\Page\Page;
@@ -18,7 +18,7 @@ class Porting extends Task
 
 	const SHOP_PARENT        = 3;
 
-	const APPAREL_SKU_PREFIX = 'RSAR';
+	const APPAREL_SKU_PREFIX = 'App';
 
 	/**
 	 * Transaction used for porting all the products in one go

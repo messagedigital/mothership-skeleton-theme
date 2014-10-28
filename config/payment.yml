@@ -1,0 +1,3 @@
+gateway: stripe
+use-test-payments: true
+salt: Bke9hjAw6T99B5BEj7k7

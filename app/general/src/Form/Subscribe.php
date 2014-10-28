@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\Form;
+namespace App\General\Form;
 
 use Symfony\Component\Form;
 use Symfony\Component\Validator\Constraints;

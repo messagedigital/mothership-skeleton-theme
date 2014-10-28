@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
 
 	// Offset the wrapper
 	wrapper.css({
-		marginTop: '-70px'
+		marginTop: '-56px'
 	});
 
 	// Click on main navigation
@@ -55,7 +55,7 @@ jQuery(document).ready(function($) {
 			open = false;
 
 			wrapper.css({
-				marginTop: '-70px'
+				marginTop: '-56px'
 			});
 
 			wrapper.children('.sub-navigation').remove();

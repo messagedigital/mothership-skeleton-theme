@@ -1,15 +1,27 @@
 {% javascripts
-	'@<Add vendor name>:General::resources/assets/js/jquery.1.11.1.min.js'
-	'@<Add vendor name>:General::resources/assets/js/jquery.touch-swipe.js'
-	'@<Add vendor name>:General::resources/assets/js/jquery.animate-colors.js'
-	'@<Add vendor name>:General::resources/assets/js/jquery.gallery.js'
-	'@<Add vendor name>:General::resources/assets/js/jquery.menu.js'
-	'@<Add vendor name>:General::resources/assets/js/jquery.offcanvas.js'
-	'@<Add vendor name>:General::resources/assets/js/jquery.basket.js'
-	'@<Add vendor name>:General::resources/assets/js/jquery.setup.js'
+	'@App:General::resources/assets/js/jquery.1.11.1.min.js'
+	'@App:General::resources/assets/js/jquery.background-cover.js'
+	'@App:General::resources/assets/js/jquery.touch-swipe.js'
+	'@App:General::resources/assets/js/jquery.animate-colors.js'
+	'@App:General::resources/assets/js/jquery.gallery.js'
+	'@App:General::resources/assets/js/jquery.menu.js'
+	'@App:General::resources/assets/js/jquery.offcanvas.js'
+	'@App:General::resources/assets/js/jquery.basket.js'
+	'@App:General::resources/assets/js/jquery.setup.js'
 
-	output='/assets/js/<Add vendor name>-*.js'
+	output='/assets/js/rsar-*.js'
 	filter='?jsmin'
 %}
 	<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+{% javascripts
+	'@App:General::resources/assets/js/jquery.rem.js'
+
+	output='/assets/js/rem.js'
+	filter='?jsmin'
+%}
+	<!--[if IE 8]>
+		<script src="/assets/js/rem.js"></script>
+	<![endif]-->
 {% endjavascripts %}

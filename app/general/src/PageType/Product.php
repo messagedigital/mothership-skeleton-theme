@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\PageType;
+namespace App\General\PageType;
 
 use Message\Mothership\CMS\PageType\PageTypeInterface;
 use Message\Cog\Field\Factory as FieldFactory;
@@ -32,7 +32,7 @@ class Product implements PageTypeInterface
 
 	public function getViewReference()
 	{
-		return 'RSAR:General::page_type:product';
+		return 'App:General::page_type:product';
 	}
 
 	public function setFields(FieldFactory $factory)

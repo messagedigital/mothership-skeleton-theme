@@ -1,0 +1,8 @@
+name: Nucleus
+base-url: message.co.uk
+default-contact-email: dev@message.co.uk
+default-email-from:
+  email: dev@message.co.uk
+  name: App
+csrf-secret: ASD3r9jdaD£adLHITsfj40f$F$fsfscnsb
+session-namespace: nucleus

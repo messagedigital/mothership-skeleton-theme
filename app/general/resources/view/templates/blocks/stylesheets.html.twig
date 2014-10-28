@@ -1,37 +1,24 @@
 {% stylesheets
-	'@<Add vendor name>:General::resources/assets/css/reset.css'
-	'@<Add vendor name>:General::resources/assets/css/basic.css'
-	'@<Add vendor name>:General::resources/assets/css/layout.css'
-	'@<Add vendor name>:General::resources/assets/css/fonts.css'
-	'@<Add vendor name>:General::resources/assets/css/checkout.css'
-	'@<Add vendor name>:General::resources/assets/css/account.css'
-	'@<Add vendor name>:General::resources/assets/css/styles.css'
-	'@<Add vendor name>:General::resources/assets/css/mobile.css'
-	output='/assets/css/<Add vendor name>-*.css'
+	'@App:General::resources/assets/css/basic.css'
+	'@App:General::resources/assets/css/layout.css'
+	'@App:General::resources/assets/css/fonts.css'
+	'@App:General::resources/assets/css/checkout.css'
+	'@App:General::resources/assets/css/account.css'
+	'@App:General::resources/assets/css/styles.css'
+	'@App:General::resources/assets/css/mobile.css'
+	output='/assets/css/nucleus-*.css'
 	filter='csscogulerewrite,?cssmin'
 %}
 <link rel="stylesheet" href="{{ asset_url }}">
 {% endstylesheets %}
 
 {% stylesheets
-	'@<Add vendor name>:General::resources/assets/css/ie8.css'
+	'@App:General::resources/assets/css/ie8.css'
 
 	output='/assets/css/ie8.css'
 	filter='csscogulerewrite,?cssmin'
 %}
-	<!--[if IE 7]>
-	<link rel="stylesheet" href="{{ asset_url }}">
+	<!--[if IE 8]>
+		<link rel="stylesheet" href="{{ asset_url }}">
 	<![endif]-->
 {% endstylesheets %}
-
-{% stylesheets
-	'@<Add vendor name>:General::resources/assets/css/ie9.css'
-
-	output='/assets/css/ie9.css'
-	filter='csscogulerewrite,?cssmin'
-%}
-	<!--[if IE 7]>
-	<link rel="stylesheet" href="{{ asset_url }}">
-	<![endif]-->
-{% endstylesheets %}
-

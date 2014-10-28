@@ -2,15 +2,11 @@
 	<div class="row">
 		{% for key, page in pages %}
 			{% set image = page.content.gallery.all[0].image ?: page.content.product.product.product.image %}
-			<div class="product">
+			<div class="product col-3">
 				<a href="{{ page.slug }}">
 					{{ getResizedImage(image, 360,455) }}
-					<div class="details">
-						<div class="alignment-mid">
-							<h3>{{ page.content.product.product.product.displayName }}</h3>
-							<h5>{{ page.content.product.option.value }} <span class="price">{{ page.content.product.product.product.getPrice | price }}</span></h5>
-						</div>
-					</div>
+					<h3>{{ page.content.product.product.product.displayName }}</h3>
+					<h5>{{ page.content.product.option.value }} <span class="price">{{ page.content.product.product.product.getPrice | price }}</span></h5>
 				</a>
 			</div>
 		{% endfor %}

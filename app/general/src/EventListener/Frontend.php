@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\EventListener;
+namespace App\General\EventListener;
 
 use Message\Mothership\CMS\Page;
 
@@ -67,7 +67,7 @@ class Frontend extends BaseListener implements SubscriberInterface
 		}
 
 		$request = $event->getRequest()->duplicate(null, null, array(
-			'_controller' => 'RSAR\\General\\Controller\\Error::exception',
+			'_controller' => 'App\\General\\Controller\\Error::exception',
 			'_format'     => $event->getRequest()->getRequestFormat(),
 			'exception'   => $event->getException(),
 		));

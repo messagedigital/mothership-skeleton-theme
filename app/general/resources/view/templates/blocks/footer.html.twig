@@ -1,24 +1,31 @@
-<footer class="footer" role="contentinfo">
-	{{ render(controller('<Add vendor name>:General::Controller:Module:Menu#footer')) }}
-	<section class="column">
+<div class="row">
+	<div class="col-12">
+		<a href="#top" class="top">Back to top</a>
+	</div>
+</div>
+
+<footer class="footer row" role="contentinfo">
+	{{ render(controller('App:General::Controller:Module:Menu#footer')) }}
+	<section class="col-3">
 		<h4>Social</h4>
 		<ul class="social">
-			<li>
-				<a href="http://twitter.com">Twitter</a>
+			<li class="twitter">
+				<a href="https://twitter.com/">Twitter</a>
 			</li>
-			<li>
-				<a href="http://instagram.com">Instagram</a>
+			<li class-"instagram">
+				<a href="http://instagram.com/">Instagram</a>
 			</li>
-			<li>
-				<a href="http://facebook.com">Facebook</a>
+			<li class="facebook">
+				<a href="https://www.facebook.com/">Facebook</a>
 			</li>
-			<li>
-				<a href="http://pinterest.com">Pinterest</a>
+			<li class="pinterest">
+				<a href="http://www.pinterest.com/">Pinterest</a>
 			</li>
 		</ul>
 	</section>
-	<section class="copy">
-		<a href="/" class="logo">Add vendor name</a>
-		<small>&copy; Add vendor name. Website by <a href="http://www.message.co.uk/">Message</a></small>
-	</section>
 </footer>
+<section class="copy row">
+	<div class="col-12">
+		<small>&copy; 2014 Nucleus. Website by <a href="http://www.message.co.uk/">Message</a></small>
+	</div>
+</section>

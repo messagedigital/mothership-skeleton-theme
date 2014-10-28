@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\Shop;
+namespace App\General\Shop;
 
 use Message\Mothership\CMS\Page;
 

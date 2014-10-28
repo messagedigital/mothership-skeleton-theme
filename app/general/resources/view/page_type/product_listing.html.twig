@@ -1,9 +1,13 @@
-{% extends '<Add vendor name>:General::templates/base' %}
+{% extends 'App:General::templates:base' %}
 
 {% block content %}
 	<main class="content" id="content" role="main">
-		<h1>{{ page.title }}</h1>
-		{{ render(controller('<Add vendor name>:General::Controller:Module:Shop#productBlocks', {
+		<div class="row">
+			<div class="col-12">
+				<h1>{{ page.title }}</h1>
+			</div>
+		</div>
+		{{ render(controller('App:General::Controller:Module:Shop#productBlocks', {
 			page: page
 		})) }}
 	</main>

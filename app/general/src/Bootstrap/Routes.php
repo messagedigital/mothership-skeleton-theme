@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\Bootstrap;
+namespace App\General\Bootstrap;
 
 use Message\Cog\Bootstrap\RoutesInterface;
 use Message\Cog\Service\ContainerInterface;
@@ -22,7 +22,7 @@ class Routes implements RoutesInterface, ContainerAwareInterface
 	{
 //		$this->enableSSL($router);
 
-		$router->add('rsar.subscribe.action', '/mailing-list/subscribe', 'RSAR:General::Controller:Module:Subscribe#subscribeAction')
+		$router->add('rsar.subscribe.action', '/mailing-list/subscribe', 'App:General::Controller:Module:Subscribe#subscribeAction')
 			->setMethod('POST');
 	}
 

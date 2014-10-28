@@ -1,8 +1,8 @@
 <?php
 
-namespace RSAR\General\Bootstrap;
+namespace App\General\Bootstrap;
 
-use RSAR\General\EventListener;
+use App\General\EventListener;
 
 use Message\Cog\Bootstrap\EventsInterface;
 

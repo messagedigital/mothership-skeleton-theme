@@ -1,30 +1,37 @@
 {% extends 'Message:Mothership:User::account:account-layout' %}
 
 {% block account_content %}
-	<div class="column">
-		<h3>Account Detail</h3>
-		<ul>
-			<li><span>Name</span> {{user.forename}} {{ user.surname }}</li>
-			<li><span>E-Mail-Address</span> {{ user.email }}</li>
-		</ul>
+	{% if user %}
+		<div class="col-12 no-gutter">
+			<h1>Hello {{ user.name }}</h1>
+		</div>
+	{% endif %}
+		<div class="col-12 no-gutter">
+			<h3>Account Detail</h3>
+			<dl>
+				<dt>Name</dt>
+					<dd>{{user.forename}} {{ user.surname }}</dd>
+				<dt>E-Mail-Address</dt>
+					<dd>{{ user.email }}</dd>
+			</dl>
+		</div>
 		{% if billingAddress %}
-			{% set address = billingAddress %}
-			{% include 'Message:Mothership:Commerce::order:detail:address:detail' %}
+			<div class="col-6 no-gutter">
+				{% set address = billingAddress %}
+				{% include 'Message:Mothership:Commerce::order:detail:address:detail' %}
+				<a href="{{ url('ms.user.edit') }}">Edit</a>
+			</div>
 		{% endif %}
 		{% if deliveryAddress %}
-			{% set address = deliveryAddress %}
-			{% include 'Message:Mothership:Commerce::order:detail:address:detail' %}
+			<div class="col-6 no-gutter">
+				{% set address = deliveryAddress %}
+				{% include 'Message:Mothership:Commerce::order:detail:address:detail' %}
+				<a href="{{ url('ms.user.edit') }}">Edit</a>
+			</div>
 		{% endif %}
-		<p>Send me E-Mail updates? {{ subscribed }}</p>
-	</div>
-{% endblock %}
-
-{% block account_menu %}
-	<div class="column right">
-		<h3>Your account</h3>
-		<ul>
-			<li><a href="{{ url('ms.user.edit') }}">Edit account details and settings</a></li>
-			<li><a href="{{ url('ms.user.order.listing') }}">Show order history</a></li>
-		</ul>
+		<div class="col-12 no-gutter">
+			<a href="{{ url('ms.user.edit') }}">Edit account details and settings</a>
+			{# <p>Send me E-Mail updates? {{ subscribed }}</p> #}
+		</div>
 	</div>
 {% endblock %}

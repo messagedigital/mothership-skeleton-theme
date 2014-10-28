@@ -1,6 +1,8 @@
 <?php
 
-namespace RSAR\General\PageType;
+namespace App\General\PageType;
+
+use App\General\Constraint as RsarConstraint;
 
 use Message\Mothership\CMS\PageType\PageTypeInterface;
 use Message\Cog\Field\Factory as FieldFactory;
@@ -32,7 +34,7 @@ class OurStory implements PageTypeInterface
 
 	public function getViewReference()
 	{
-		return 'RSAR:General::page_type:our_story';
+		return 'App:General::page_type:our_story';
 	}
 
 	public function setFields(FieldFactory $factory)
@@ -40,7 +42,12 @@ class OurStory implements PageTypeInterface
 		$factory->addGroup('content', 'Content')
 			->setRepeatable()
 			->add($factory->getField('richtext', 'content', 'Content'))
-			->add($factory->getField('file', 'image', 'Image')->setAllowedTypes(File\Type::IMAGE));
+			->add($factory->getField('file', 'image', 'Image')->setAllowedTypes(File\Type::IMAGE))
+			->add($factory->getField('text', 'vimeo', 'Vimeo URL')->setFieldOptions([
+				'constraints' => [
+					new RsarConstraint\Vimeo,
+				],
+			]))
 		;
 	}
 }

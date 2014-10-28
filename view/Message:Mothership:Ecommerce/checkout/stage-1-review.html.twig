@@ -2,26 +2,31 @@
 
 {% block content %}
 	<main class="checkout" id="main-content">
-		<h1>Checkout</h1>
-		<section class="progress">
-			<div class="active">
-				<p><strong>Stage 01</strong> Your selection</p>
-			</div>
-			<div>
-				<p><strong>Stage 02</strong> Your details</p>
-			</div>
-			<div>
-				<p><strong>Stage 03</strong> Delivery details</p>
-			</div>
-			<div>
-				<p><strong>Stage 04</strong> Payment</p>
-			</div>
-			<div>
-				<p><strong>Stage 05</strong> Confirmation</p>
+		<section class="row">
+			<div class="col-12">
+				<h1>Checkout</h1>
+				<div class="progress">
+					<div class="active">
+						<p><strong>Stage 01</strong> Your selection</p>
+					</div>
+					<div>
+						<p><strong>Stage 02</strong> Your details</p>
+					</div>
+					<div>
+						<p><strong>Stage 03</strong> Delivery details</p>
+					</div>
+					<div>
+						<p><strong>Stage 04</strong> Payment</p>
+					</div>
+					<div>
+						<p><strong>Stage 05</strong> Confirmation</p>
+					</div>
+				</div>
 			</div>
 		</section>
 		{% if order.items|length != 0 %}
-		<div class="selection">
+		<section class="selection row">
+			<div class="col-12">
 			{{ form_start(form, {'attr': {id: 'checkout-selection-form'}}) }}
 				<h2>Your Selection</h2>
 				<table class="cf">
@@ -52,7 +57,7 @@
 								</td>
 								<td class="quantity">{{ form_widget(form['items'][item.item.unitID]) }}
 								</td>
-								<td class="price">{{ (item.item.basePrice * item.quantity)|price }}
+								<td class="price" data-checkout-live-update>{{ (item.item.basePrice * item.quantity)|price }}
 								</td>
 								<td class="remove"><a href="{{ url('ms.ecom.checkout.remove',{'unitID':item.item.unitID}) }}">Remove</a></td>
 								</tr>
@@ -61,35 +66,36 @@
 				</table>
 				<button type="submit" class="update">Update</button>
 			{{ form_end(form) }}
-			<section class="discounts">
-				{% if moduleExists('Message:Mothership:Discount') %}
-					<div class="discount-code">
-
-						{{ render(controller('Message:Mothership:Discount::Controller:AddDiscount#index')) }}
-					</div>
-				{% endif %}
-				{% if moduleExists('Message:Mothership:Voucher') %}
-					<div class="gift-voucher">
-						{{ render(controller('Message:Mothership:Voucher::Controller:AddVoucher#index')) }}
-					</div>
-				{% endif %}
-			</section>
+			</div>
+		</section>
+		<section class="row">
+			{% if moduleExists('Message:Mothership:Discount') %}
+				<div class="discount-code col-4">
+					{{ render(controller('Message:Mothership:Discount::Controller:AddDiscount#index')) }}
+				</div>
+			{% endif %}
+			{% if moduleExists('Message:Mothership:Voucher') %}
+				<div class="gift-voucher col-4">
+					{{ render(controller('Message:Mothership:Voucher::Controller:AddVoucher#index')) }}
+				</div>
+			{% endif %}
 			{% import 'Message:Mothership:Ecommerce::checkout:totals' as totals %}
 			{{ totals.renderTotals(order) }}
-		</div>
-		<nav class="checkout-nav">
-			<a href="/shop" class="button cancel">Continue shopping</a>
-			<a href="{{ url('ms.ecom.checkout.details')}} " class="button continue">Continue to details</a>
+		</section>
+		<nav class="checkout-nav row">
+			<div class="col-12">
+				<a href="/shop" class="button cancel">Continue shopping</a>
+				<a href="{{ url('ms.ecom.checkout.details')}} " class="button continue">Continue to details</a>
+			</div>
 		</nav>
 	{% else %}
-		<section class="empty">
-			<div>
+		<section class="empty row">
+			<div class="col-12">
 				<h2>Your cart is empty</h2>
 				<p>You don’t have anything currently in your shopping cart. Please take your time to browse the store.</p>
 				<a href="/shop" class="button continue">Continue shopping</a>
 			</div>
 		</section>
 	{% endif %}
-
 	</main>
 {% endblock %}

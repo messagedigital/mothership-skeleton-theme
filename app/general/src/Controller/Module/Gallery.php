@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\Controller\Module;
+namespace App\General\Controller\Module;
 
 use Message\Cog\Controller\Controller;
 use Message\Cog\Field\RepeatableContainer;
@@ -22,7 +22,7 @@ class Gallery extends Controller
 			$current = (array_key_exists($currentIndex, $thumbs)) ? $thumbs[$currentIndex] : $thumbs[0];
 		}
 
-		return $this->render('RSAR:General::module:product:gallery', [
+		return $this->render('App:General::module:product:gallery', [
 			'thumbs'  => (count($thumbs) > 1) ? $thumbs : [],
 			'current' => $current,
 		]);

@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\PageType;
+namespace App\General\PageType;
 
 use Message\Mothership\CMS\PageType\PageTypeInterface;
 

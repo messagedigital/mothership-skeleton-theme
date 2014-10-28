@@ -1,0 +1,62 @@
+{% set imageCounter = 1 %}
+
+{% macro renderVideo(url, width, height) %}
+	{{
+		render(controller(
+			'App:General::Controller:Module:Vimeo#embed',
+			{
+				'url': url,
+				'width': width,
+				'height': height
+			}
+		))
+	}}
+{% endmacro %}
+
+{% for key, row in content.content %}
+	{% if row.content.value and row.vimeo.value %}
+		<div class="row">
+			{{ _self.renderVideo(row.vimeo, 1024, 580) }}
+		</div>
+		<div class="row">
+			{{ row.content | raw }}
+		</div>
+	{% elseif row.content.value and row.image.value %}
+		{% if (imageCounter is odd) %}
+			<section class="text about row" data-height>
+				<div class="column">
+					{{ getResizedImage(row.image, 800, 800, {'class': 'cover'}) }}
+				</div>
+				<div class="column">
+					<div class="centered">
+						{{ row.content | raw }}
+					</div>
+				</div>
+			</section>
+		{% else %}
+			<section class="text about row" data-height>
+				<div class="column">
+					<div class="centered">
+						{{ row.content | raw }}
+					</div>
+				</div>
+				<div class="column">
+					{{ getResizedImage(row.image, 800, 800, {'class': 'cover'}) }}
+				</div>
+			</section>
+		{% endif %}
+		{% set imageCounter = imageCounter + 1 %}
+	{% elseif row.content.value %}
+		<div class="row">
+			{{ row.content | raw }}
+		</div>
+	{% elseif row.vimeo.value%}
+		<div class="row">
+			{{ _self.renderVideo(row.vimeo, 1024, 580) }}
+		</div>
+	{% elseif row.image.value %}
+		<div class="full-image row" data-height>
+			{{ getResizedImage(row.image, 1440, 900, {'class': 'cover'}) }}
+		</div>
+	{% endif %}
+{% endfor %}

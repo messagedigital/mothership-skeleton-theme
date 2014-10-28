@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\Controller\Module;
+namespace App\General\Controller\Module;
 
 use Message\Cog\Controller\Controller;
 
@@ -14,7 +14,7 @@ class Subscribe extends Controller
 			['action' => $this->generateUrl('rsar.subscribe.action')]
 		);
 
-		return $this->render('RSAR:General::module:subscribe:subscribe', [
+		return $this->render('App:General::module:subscribe:subscribe', [
 			'form' => $form,
 		]);
 	}

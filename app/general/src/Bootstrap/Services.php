@@ -1,8 +1,8 @@
 <?php
 
-namespace RSAR\General\Bootstrap;
+namespace App\General\Bootstrap;
 
-use RSAR\General\PageType;
+use App\General\PageType;
 
 use Message\Cog\Bootstrap\ServicesInterface;
 use Message\Mothership\Commerce\Product;
@@ -50,17 +50,22 @@ class Services implements ServicesInterface
 		});
 
 		$services['rsar.form.subscribe'] = function($c) {
-			return new \RSAR\General\Form\Subscribe;
+			return new \App\General\Form\Subscribe;
 		};
 
-		$services->extend('shipping.methods', function($methods) {
-			$methods->add(new \RSAR\General\ShippingMethod\Uk);
+		$services->extend('shipping.methods', function($methods, $c) {
+			$methods->add(new \App\General\ShippingMethod\UkSmall($c['country.list']));
+			$methods->add(new \App\General\ShippingMethod\UkLarge($c['country.list']));
+			$methods->add(new \App\General\ShippingMethod\EuSmall($c['country.list']));
+			$methods->add(new \App\General\ShippingMethod\EuLarge($c['country.list']));
+			$methods->add(new \App\General\ShippingMethod\RowSmall($c['country.list']));
+			$methods->add(new \App\General\ShippingMethod\RowLarge($c['country.list']));
 
 			return $methods;
 		});
 
 		$services->extend('order.dispatch.methods', function($methods) {
-			$methods->add(new \RSAR\General\DispatchMethod\Manual);
+			$methods->add(new \App\General\DispatchMethod\Manual);
 
 			return $methods;
 		});
@@ -87,7 +92,7 @@ class Services implements ServicesInterface
 
 		// CMS
 		$services['rsar.shop.product_page_loader'] = function($c) {
-			return new \RSAR\General\Shop\ProductPageLoader($c['cms.page.loader'], $c['cms.page.content_loader']);
+			return new \App\General\Shop\ProductPageLoader($c['cms.page.loader'], $c['cms.page.content_loader']);
 		};
 	}
 }

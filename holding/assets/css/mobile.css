@@ -1,0 +1,248 @@
+/* ======================================================= */
+/*                                                         */
+/*                                                         */
+/*    Real Stars are Rare                                  */
+/*                                                         */
+/*                                                         */
+/* ======================================================= */
+/*
+/*
+/*    Development by Message
+/*    http://www.message.co.uk
+/*
+/*    Mobile Style Sheet v1.0
+/*    Created by Richard McCartney
+/*
+/*
+/* ======================================================= */
+
+
+@media screen and (max-width: 2560px) {
+
+    p {
+        max-width: 1280px;
+    }
+
+}
+
+@media screen and (max-width: 1680px) {
+
+    p {
+        max-width: 1024px;
+    }
+
+}
+
+@media screen and (max-width: 1440px) {
+
+    p {
+        max-width: 800px;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5
+    {
+        margin: 0 0 15px;
+    }
+
+    h1
+    {
+        font-size: 2.250rem;
+    }
+
+    h2
+    {
+        font-size: 1.500rem;
+    }
+
+    h3
+    {
+        font-size: 1rem;
+    }
+
+    h4
+    {
+        font-size: .875rem;
+    }
+
+    h5
+    {
+        font-size: .875rem;
+    }
+
+    p
+    {
+        font-size: .875rem;
+        line-height: 1.875;
+
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: 0 40px;
+    }
+
+    s,
+    small
+    {
+        font-size: .45rem;
+    }
+
+    ul li,
+    ol li
+    {
+        font-size: .875rem;
+        line-height: 1.875;
+    }
+
+    /* Header */
+
+
+    .logo
+    {
+
+        width: 82px;
+        height: 70px;
+        margin: 0 0 0 -41px;
+
+        -webkit-background-size: 82px 70px;
+                background-size: 82px 70px;
+    }
+
+    /* Footer */
+
+    .footer .column
+    {
+        padding: 40px 40px 80px;
+    }
+
+    .footer li
+    {
+        margin-bottom: 0;
+    }
+
+    .footer a
+    {
+        font-size: .875rem;
+    }
+
+    .footer small a
+    {
+        font-size: .45rem;
+    }
+
+    .footer .logo
+    {
+        background-position: center bottom;
+        -webkit-background-size: 62px 50px;
+                background-size: 62px 50px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .footer .column
+    {
+        width: 50%;
+        padding: 40px;
+
+        text-align: center;
+    }
+
+    .social li
+    {
+        display: inline-block;
+        float: none;
+
+        width: auto;
+    }
+
+    .social a
+    {
+        margin: 0 10px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    h1
+    {
+        font-size: 1.5rem;
+    }
+
+    h2
+    {
+        font-size: 1rem;
+    }
+
+    h3
+    {
+        font-size: .875rem;
+    }
+
+    h4
+    {
+        font-size: .875rem;
+    }
+
+    h5
+    {
+        font-size: .875rem;
+    }
+
+    /* Header */
+
+    .logo
+    {
+
+        width: 52px;
+        height: 40px;
+        margin-left: -26px;
+
+        -webkit-background-size: 52px 40px;
+                background-size: 52px 40px;
+    }
+
+    /* Footer */
+
+
+    .footer
+    {
+        padding-top: 30px;
+    }
+
+    .footer .column
+    {
+        width: 100%;
+        padding: 20px 40px;
+
+        text-align: center;
+    }
+
+    .social li
+    {
+        display: inline-block;
+        float: none;
+
+        width: auto;
+    }
+
+    .footer .logo
+    {
+        -webkit-background-size: 42px 30px;
+                background-size: 42px 30px;
+    }
+
+    .footer .copy
+    {
+        padding: 80px 0 40px;
+    }
+
+}
