@@ -49,7 +49,7 @@ class Services implements ServicesInterface
 			return $locations;
 		});
 
-		$services['rsar.form.subscribe'] = function($c) {
+		$services['app.form.subscribe'] = function($c) {
 			return new \App\General\Form\Subscribe;
 		};
 
@@ -91,7 +91,7 @@ class Services implements ServicesInterface
 		});
 
 		// CMS
-		$services['rsar.shop.product_page_loader'] = function($c) {
+		$services['app.shop.product_page_loader'] = function($c) {
 			return new \App\General\Shop\ProductPageLoader($c['cms.page.loader'], $c['cms.page.content_loader']);
 		};
 	}

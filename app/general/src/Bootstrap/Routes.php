@@ -20,24 +20,25 @@ class Routes implements RoutesInterface, ContainerAwareInterface
 
 	public function registerRoutes($router)
 	{
-//		$this->enableSSL($router);
+		// Call once ssl is required:
+		// $this->enableSSL($router);
 
-		$router->add('rsar.subscribe.action', '/mailing-list/subscribe', 'App:General::Controller:Module:Subscribe#subscribeAction')
+		$router->add('app.subscribe.action', '/mailing-list/subscribe', 'App:General::Controller:Module:Subscribe#subscribeAction')
 			->setMethod('POST');
 	}
 
-//	public function enableSSL($router)
-//	{
-//		// Skip if not in live or dev environment
-//		// TODO: remove dev from this list once the PR is approved
-//		if (!in_array($this->_services['environment']->get(), ['live'])) {
-//			return false;
-//		}
-//
-//		$router->getDefault()->setSchemes(['https']);
-//
-//		foreach ($router as $key => $collection) {
-//			$router[$key]->setSchemes(['https']);
-//		}
-//	}
+	public function enableSSL($router)
+	{
+		// Skip if not in live or dev environment
+		// TODO: remove dev from this list once the PR is approved
+		if (!in_array($this->_services['environment']->get(), ['live'])) {
+			return false;
+		}
+
+		$router->getDefault()->setSchemes(['https']);
+
+		foreach ($router as $key => $collection) {
+			$router[$key]->setSchemes(['https']);
+		}
+	}
 }

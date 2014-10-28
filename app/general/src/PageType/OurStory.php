@@ -2,7 +2,7 @@
 
 namespace App\General\PageType;
 
-use App\General\Constraint as RsarConstraint;
+use App\General\Constraint as AppConstraint;
 
 use Message\Mothership\CMS\PageType\PageTypeInterface;
 use Message\Cog\Field\Factory as FieldFactory;
@@ -45,7 +45,7 @@ class OurStory implements PageTypeInterface
 			->add($factory->getField('file', 'image', 'Image')->setAllowedTypes(File\Type::IMAGE))
 			->add($factory->getField('text', 'vimeo', 'Vimeo URL')->setFieldOptions([
 				'constraints' => [
-					new RsarConstraint\Vimeo,
+					new AppConstraint\Vimeo,
 				],
 			]))
 		;
