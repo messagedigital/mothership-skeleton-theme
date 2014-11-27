@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\PageType;
+namespace Mothership\Site\PageType;
 
 use Message\Mothership\CMS\PageType\PageTypeInterface;
 use Message\Cog\Field\Factory as FieldFactory;
@@ -32,7 +32,7 @@ class Home implements PageTypeInterface
 
 	public function getViewReference()
 	{
-		return 'RSAR:General::page_type:home';
+		return 'Mothership:Site::page_type:home';
 	}
 
 	public function setFields(FieldFactory $factory)

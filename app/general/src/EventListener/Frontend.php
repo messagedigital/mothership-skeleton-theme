@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\EventListener;
+namespace Mothership\Site\EventListener;
 
 use Message\Mothership\CMS\Page;
 
