@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\Controller\Module;
+namespace Mothership\Site\Controller\Module;
 
 use Message\Cog\Controller\Controller;
 use Message\Mothership\CMS\Page\Page;
@@ -14,7 +14,7 @@ class Shop extends Controller
 
 	public function productBlocks(Page $page)
 	{
-		return $this->render('RSAR:General::module:shop:product_blocks', [
+		return $this->render('Mothership:Site::module:shop:product_blocks', [
 			'pages'  => $this->get('rsar.shop.product_page_loader')->getProductPages($page),
 			'perRow' => 4,
 		]);
@@ -29,7 +29,7 @@ class Shop extends Controller
 			$totalListPrice += $item->listPrice;
 		}
 
-		return $this->render('RSAR:General::module:shop:basket', [
+		return $this->render('Mothership:Site::module:shop:basket', [
 			'basket'         => $basket,
 			'totalListPrice' => $totalListPrice,
 		]);
@@ -47,7 +47,7 @@ class Shop extends Controller
 			'product',
 		]);
 
-		return $this->render('RSAR:General::module:shop:cross_sell', [
+		return $this->render('Mothership:Site::module:shop:cross_sell', [
 			'mapper'     => $mapper,
 			'cross_sell' => $crossSell,
 		]);

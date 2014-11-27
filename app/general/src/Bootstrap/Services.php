@@ -1,8 +1,8 @@
 <?php
 
-namespace RSAR\General\Bootstrap;
+namespace Mothership\Site\Bootstrap;
 
-use RSAR\General\PageType;
+use Mothership\Site\PageType;
 
 use Message\Cog\Bootstrap\ServicesInterface;
 use Message\Mothership\Commerce\Product;
@@ -50,17 +50,17 @@ class Services implements ServicesInterface
 		});
 
 		$services['rsar.form.subscribe'] = function($c) {
-			return new \RSAR\General\Form\Subscribe;
+			return new \Mothership\Site\Form\Subscribe;
 		};
 
 		$services->extend('shipping.methods', function($methods) {
-			$methods->add(new \RSAR\General\ShippingMethod\Uk);
+			$methods->add(new \Mothership\Site\ShippingMethod\Uk);
 
 			return $methods;
 		});
 
 		$services->extend('order.dispatch.methods', function($methods) {
-			$methods->add(new \RSAR\General\DispatchMethod\Manual);
+			$methods->add(new \Mothership\Site\DispatchMethod\Manual);
 
 			return $methods;
 		});
@@ -87,7 +87,7 @@ class Services implements ServicesInterface
 
 		// CMS
 		$services['rsar.shop.product_page_loader'] = function($c) {
-			return new \RSAR\General\Shop\ProductPageLoader($c['cms.page.loader'], $c['cms.page.content_loader']);
+			return new \Mothership\Site\Shop\ProductPageLoader($c['cms.page.loader'], $c['cms.page.content_loader']);
 		};
 	}
 }

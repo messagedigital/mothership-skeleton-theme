@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\Controller\Module;
+namespace Mothership\Site\Controller\Module;
 
 use Message\Mothership\CMS\Page\Page;
 use Message\Cog\Controller\Controller;
@@ -26,7 +26,7 @@ class Menu extends Controller
 			$this->_active = $active;
 		}
 
-		return $this->render('RSAR:General::module:menu:menu', [
+		return $this->render('Mothership:Site::module:menu:menu', [
 			'pages'       => $pages,
 			'active'      => $this->_active,
 			'currentPage' => $currentPage,
@@ -44,7 +44,7 @@ class Menu extends Controller
 			$children[$page->id] = $this->get('cms.page.loader')->getChildren($page);
 		}
 
-		return $this->render('RSAR:General::module:menu:footer', [
+		return $this->render('Mothership:Site::module:menu:footer', [
 			'pages'    => $pages,
 			'children' => $children,
 		]);

@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\PageType;
+namespace Mothership\Site\PageType;
 
 use Message\Mothership\CMS\PageType\PageTypeInterface;
 use Message\Cog\Field\Factory as FieldFactory;
@@ -31,7 +31,7 @@ class Generic implements PageTypeInterface
 
 	public function getViewReference()
 	{
-		return 'RSAR:General::page_type:generic';
+		return 'Mothership:Site::page_type:generic';
 	}
 
 	public function setFields(FieldFactory $factory)

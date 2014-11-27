@@ -1,6 +1,6 @@
 <?php
 
-namespace RSAR\General\ShippingMethod;
+namespace Mothership\Site\ShippingMethod;
 
 use Message\Mothership\Commerce\Shipping\MethodInterface;
 use Message\Mothership\Commerce\Order\Order;
