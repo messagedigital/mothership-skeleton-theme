@@ -1,4 +1,4 @@
-{% extends '<Add vendor name>:General::templates/base' %}
+{% extends 'Mothership:Site::templates/base' %}
 
 {% block title %}Checkout | {{ app.cfg.app.name }}{% endblock %}
 
@@ -7,7 +7,7 @@
 
 	{% stylesheets
 
-	output='/assets/css/rsar_checkout-*.css'
+	output='/assets/css/ms-site_checkout-*.css'
 	filter='csscogulerewrite,?cssmin'
 	%}
 	<link rel="stylesheet" href="{{ asset_url }}">
@@ -21,7 +21,7 @@
 
 	{% javascripts
 
-	output='/assets/js/rsar_checkout-*.js'
+	output='/assets/js/ms-site_checkout-*.js'
 	filter='?jsmin'
 	%}
 	<script src="{{ asset_url }}"></script>

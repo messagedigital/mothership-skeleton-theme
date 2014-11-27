@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	{# Site meta details #}
+	{% block meta %}
+		{% include '@Mothership:Site::templates:blocks:meta' %}
+	{% endblock %}
+
+	{# Site stylesheets #}
+	{% block stylesheets %}
+		{% include '@Mothership:Site::templates:blocks:stylesheets' %}
+	{% endblock %}
+
+	{# Site javascript #}
+	{% block javascripts %}
+		{% include '@Mothership:Site::templates:blocks:javascript' %}
+	{% endblock %}
+</head>
+<body>
+	{# Container #}
+	<div class="container" id="top">
+		<div class="inner-container">
+		{# Header #}
+		{% block header %}
+			{% include '@Mothership:Site::templates:blocks:header' %}
+			{% include '@Mothership:Site::templates:blocks:feedback' %}
+		{% endblock %}
+
+		{# Content #}
+		{% block content %}
+		{% endblock %}
+
+		{# Footer #}
+		{% block footer %}
+			{% include '@Mothership:Site::templates:blocks:footer' %}
+		{% endblock %}
+		</div>
+	</div>
+</body>
+</html>

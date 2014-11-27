@@ -1,0 +1,10 @@
+{% extends 'Mothership:Site::templates/base' %}
+
+{% block content %}
+	<main class="content" id="content" role="main">
+		{# Add in home page blocks here #}
+		{% block exampleblock %}
+			{% include 'Mothership:Site::module:home:example' %}
+		{% endblock %}
+	</main>
+{% endblock %}
