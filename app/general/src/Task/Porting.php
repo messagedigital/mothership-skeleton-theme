@@ -1,6 +1,6 @@
 <?php
 
-namespace App\General\Task;
+namespace Mothership\Site\Task;
 
 use Message\Cog\Console\Task\Task;
 use Message\Mothership\CMS\Page\Page;

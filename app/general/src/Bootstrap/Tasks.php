@@ -1,9 +1,9 @@
 <?php
 
-namespace App\General\Bootstrap;
+namespace Mothership\Site\Bootstrap;
 
 use Message\Cog\Bootstrap\TasksInterface;
-use App\General\Task;
+use Mothership\Site\Task;
 
 class Tasks implements TasksInterface
 {

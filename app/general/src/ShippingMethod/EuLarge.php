@@ -1,6 +1,6 @@
 <?php
 
-namespace App\General\ShippingMethod;
+namespace Mothership\Site\ShippingMethod;
 
 use Message\Mothership\Commerce\Order\Order;
 

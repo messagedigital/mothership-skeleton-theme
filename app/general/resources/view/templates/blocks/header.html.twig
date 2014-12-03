@@ -4,7 +4,7 @@
 		{# Shop Access #}
 		<div class="col-12">
 			{% block shopaccess %}
-				{% include '@App:General::module:header:shopaccess' %}
+				{% include '@Mothership:Site::module:header:shopaccess' %}
 			{% endblock %}
 			<span class="nav-open">
 				<i class="fa fa-bars" data-direction="right"></i>
@@ -12,7 +12,7 @@
 
 			{# Basket #}
 			{% block basket %}
-				{{ render(controller('App:General::Controller:Module:Shop#basket')) }}
+				{{ render(controller('Mothership:Site::Controller:Module:Shop#basket')) }}
 			{% endblock %}
 		</div>
 	</div>
@@ -25,13 +25,13 @@
 		</div>
 		{# Site search #}
 		{% block search %}
-			{% include '@App:General::module:header:search' %}
+			{% include '@Mothership:Site::module:header:search' %}
 		{% endblock %}
 	</div>
 
 	{# Main navigation #}
 	{% block navigation %}
-		{% include '@App:General::module:header:navigation' %}
+		{% include '@Mothership:Site::module:header:navigation' %}
 	{% endblock %}
 
 </header>

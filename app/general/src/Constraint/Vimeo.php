@@ -1,6 +1,6 @@
 <?php
 
-namespace App\General\Constraint;
+namespace Mothership\Site\Constraint;
 
 use Symfony\Component\Validator;
 

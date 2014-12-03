@@ -2,7 +2,7 @@
 
 namespace Mothership\Site\PageType;
 
-use App\General\Constraint as AppConstraint;
+use Mothership\Site\Constraint as AppConstraint;
 use Message\Mothership\CMS\PageType\PageTypeInterface;
 use Message\Cog\Field\Factory as FieldFactory;
 
