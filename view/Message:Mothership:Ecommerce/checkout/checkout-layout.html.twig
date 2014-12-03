@@ -1,4 +1,4 @@
-{% extends 'App:General::templates/base' %}
+{% extends 'Mothership:Site::templates/base' %}
 
 {% block title %}Checkout | {{ app.cfg.app.name }}{% endblock %}
 
@@ -6,8 +6,7 @@
 	{{ parent() }}
 
 	{% stylesheets
-
-	output='/assets/css/nucleus_checkout-*.css'
+	output='/assets/css/app_checkout-*.css'
 	filter='csscogulerewrite,?cssmin'
 	%}
 	<link rel="stylesheet" href="{{ asset_url }}">
@@ -20,7 +19,6 @@
 	{% include 'Message:Mothership:Ecommerce::checkout:includes:js-block' %}
 
 	{% javascripts
-
 	output='/assets/js/app_checkout-*.js'
 	filter='?jsmin'
 	%}

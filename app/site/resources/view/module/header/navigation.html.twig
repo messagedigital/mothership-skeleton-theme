@@ -1,0 +1,7 @@
+<nav class="navigation row nav-offcanvas" role="navigation">
+	{{
+		render(controller('Mothership:Site::Controller:Module:Menu#menu', {
+			currentPage: page
+		}))
+	}}
+</nav>

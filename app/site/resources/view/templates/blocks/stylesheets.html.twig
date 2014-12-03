@@ -1,0 +1,37 @@
+{% stylesheets
+	'@Mothership:Site::resources/assets/css/reset.css'
+	'@Mothership:Site::resources/assets/css/basic.css'
+	'@Mothership:Site::resources/assets/css/layout.css'
+	'@Mothership:Site::resources/assets/css/fonts.css'
+	'@Mothership:Site::resources/assets/css/checkout.css'
+	'@Mothership:Site::resources/assets/css/account.css'
+	'@Mothership:Site::resources/assets/css/styles.css'
+	'@Mothership:Site::resources/assets/css/mobile.css'
+	output='/assets/css/<Add vendor name>-*.css'
+	filter='csscogulerewrite,?cssmin'
+%}
+<link rel="stylesheet" href="{{ asset_url }}">
+{% endstylesheets %}
+
+{% stylesheets
+	'@Mothership:Site::resources/assets/css/ie8.css'
+
+	output='/assets/css/ie8.css'
+	filter='csscogulerewrite,?cssmin'
+%}
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="{{ asset_url }}">
+	<![endif]-->
+{% endstylesheets %}
+
+{% stylesheets
+	'@Mothership:Site::resources/assets/css/ie9.css'
+
+	output='/assets/css/ie9.css'
+	filter='csscogulerewrite,?cssmin'
+%}
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="{{ asset_url }}">
+	<![endif]-->
+{% endstylesheets %}
+
