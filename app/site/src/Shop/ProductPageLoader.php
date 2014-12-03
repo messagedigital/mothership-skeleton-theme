@@ -1,5 +1,4 @@
 <?php
-
 namespace Mothership\Site\Shop;
 
 use Message\Mothership\CMS\Page;

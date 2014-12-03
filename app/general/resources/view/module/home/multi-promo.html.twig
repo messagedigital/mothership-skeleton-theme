@@ -1,0 +1,22 @@
+<section class="promo-multi row" id="promos">
+	{% for key, promo in content.promos %}
+		<div class="column" data-height>
+			{% if promo.link.value %}
+				<a href="{{ promo.link }}">
+			{% endif %}
+
+			{# Title and subtitle #}
+			<h2>{{ promo.header }}</h2>
+			<h4>{{ promo.subheader }}</h4>
+
+			{% if promo.link.value %}
+				</a>
+			{% endif %}
+
+			{# Promo image #}
+			{% if promo.image.value %}
+				{{ getResizedImage(promo.image, 480, 900, {'class': 'cover'}) }}
+			{% endif %}
+		</div>
+	{% endfor %}
+</section>

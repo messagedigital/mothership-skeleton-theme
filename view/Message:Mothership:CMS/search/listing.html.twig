@@ -11,17 +11,21 @@
 		{% set url = url('ms.cms.frontend', {slug: page.slug ?: '/' |trim('/')}) %}
 		<a href="{{ url }}">
 			{% if page.content.product %}
+				<span class="col-3">
 				{% set image = page.content.gallery.all[0].image ?: page.content.product.product.product.image %}
-				{{ getResizedImage(image, 150, 150) }}
-				<span class="details">
+				{{ getResizedImage(image, 267, 267) }}
+				</span>
+				<span class="details col-9">
 					<h2>{{ page.title }}</h2>
 					<span class="url">{{ url }}</span>
 					<p>{{ page.excerpt }}</p>
 				</span>
 			{% else %}
-				<h2>{{ page.title }}</h2>
-				<span class="url">{{ url }}</span>
-				<p>{{ page.excerpt }}</p>
+				<span class="col-12">
+					<h2>{{ page.title }}</h2>
+					<span class="url">{{ url }}</span>
+					<p>{{ page.excerpt }}</p>
+				</span>
 			{% endif %}
 		</a>
 	</li>

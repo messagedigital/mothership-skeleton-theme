@@ -1,7 +1,7 @@
 /**
- * Basket functionality
+ * Navigation functionality
  *
- * This plugin corseponds with the Off canvas basket for Mothership.
+ * This plugin corseponds with the Off canvas basket for Mothership
  *
  * This is a *private* plugin, and should only be used by Message Digital Design.
  *
@@ -11,38 +11,27 @@
 
 jQuery(document).ready(function($) {
 
-	var container = $('.inner-container'),
-		header    = $('.header'),
-		offCanvas = $('.off-canvas'),
-		link      = $('.open-canvas'),
+	var container = $('.container'),
+		navigation    = $('.nav-offcanvas'),
+		link      = $('.nav-open'),
 		close     = $('.close'),
-		offSet    = 300,
+		offSet    = -300,
 		open      = false,
 		mobile    = false;
 
 	// Open off canvas
-	function openCanvas(target, direction) {
+	function openCanvas() {
 
 		open = true;
 
 		var body = $('body');
 
 		// This only counts for navigation off canvas
-		if (direction === 'left') {
-			container.css('margin-left', offSet);
-			header.css('margin-left', offSet);
+		if (mobile === true) {
+			navigation.css('margin-left', 0);
+			container.css('left', 300);
 		}
 
-		// Basket offcanvas direct and offset for mobile
-		else if (direction === 'right' && mobile === true) {
-			container.css('margin-left', -offSet);
-			header.css('margin-left', -offSet);
-		}
-
-		// Desktop off canvas
-		else if (direction === 'right' && mobile === false) {
-			container.css('margin-left', -offSet);
-		}
 	}
 
 	// Close off canvas
@@ -50,9 +39,10 @@ jQuery(document).ready(function($) {
 
 		open = false;
 
-		container.css('margin', 0);
-		header.css('margin', 0);
-
+		if (mobile === true) {
+			container.css('left', 0);
+			navigation.css('margin-left', offSet);
+        }
 	}
 
 	// Open and close from off canvas link
@@ -62,8 +52,6 @@ jQuery(document).ready(function($) {
 
 		var canvasTarget = $(this).data('target'),
 			canvasDir    = $(this).data('direction');
-
-		console.log(canvasDir);
 
 		if (open === false) {
 			openCanvas(canvasTarget, canvasDir);
@@ -80,10 +68,10 @@ jQuery(document).ready(function($) {
 		closeCanvas();
 	});
 
-		// Swipe to close basket
+		// Swipe to close navigation
 	$(function() {
 		//Enable swiping...
-		$('.basket').swipe( {
+		$('.nav-offcanvas').swipe( {
 
 			//Generic swipe handler for all directions
 			swipeRight:function(event, direction, distance, duration) {
@@ -96,31 +84,18 @@ jQuery(document).ready(function($) {
 		});
 	});
 
-		// Swipe to close basket
-	$(function() {
-		//Enable swiping...
-		$('.mobile-nav, .navigation').swipe( {
-
-			//Generic swipe handler for all directions
-			swipeLeft:function(event, direction, distance, duration) {
-				if (open === true) {
-					closeCanvas();
-				}
-			},
-			//Default is 75px, set to 0 for demo so any distance triggers swipe
-			threshold: 75
-		});
-	});
-
 	$(window).on('resize', function() {
 		closeCanvas();
 
 		// Check if the site is below 768px width
-		if (header.css('position') === 'fixed') {
+		if ($('.container').css('max-width') == '768px') {
 			mobile = true;
+			navigation.css('margin-left', offSet);
 		} else {
 			mobile = false;
+			navigation.css('margin-left', 0);
 		}
 
 	}).trigger('resize');
+
 });

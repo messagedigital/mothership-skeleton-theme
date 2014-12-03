@@ -2,27 +2,33 @@
 
 {% block content %}
 	<main class="checkout" id="main-content">
-		<h1>Checkout</h1>
-		<section class="progress">
-			<div>
-				<p><strong>Stage 01</strong> Your selection</p>
-			</div>
-			<div>
-				<p><strong>Stage 02</strong> Your details</p>
-			</div>
-			<div class="active">
-				<p><strong>Stage 03</strong> Delivery details</p>
-			</div>
-			<div>
-				<p><strong>Stage 04</strong> Payment</p>
-			</div>
-			<div>
-				<p><strong>Stage 05</strong> Confirmation</p>
+		<section class="row">
+			<div class="col-12">
+				<h1>Checkout</h1>
+				<div class="progress">
+					<div>
+						<p><strong>Stage 01</strong> Your selection</p>
+					</div>
+					<div>
+						<p><strong>Stage 02</strong> Your details</p>
+					</div>
+					<div class="active">
+						<p><strong>Stage 03</strong> Delivery details</p>
+					</div>
+					<div>
+						<p><strong>Stage 04</strong> Payment</p>
+					</div>
+					<div>
+						<p><strong>Stage 05</strong> Confirmation</p>
+					</div>
+				</div>
 			</div>
 		</section>
-		<section class="delivery-details">
-			<h1>Delivery details</h1>
-			<div class="address">
+		<section class="delivery-details row">
+			<div class="col-12">
+				<h1>Delivery details</h1>
+			</div>
+			<div class="address col-4">
 				<h3>Delivery address</h3>
 				{% if order.getAddress('delivery') %}
 					{% set delivery = order.getAddress('delivery') %}
@@ -41,7 +47,7 @@
 					<p><a href="{{ url('ms.ecom.checkout.details.addresses')}}#delivery">Change</a></p>
 				{% endif %}
 			</div>
-			<div class="billing">
+			<div class="billing col-4">
 				<h3>Billing details</h3>
 				{% if order.getAddress('billing') %}
 					{% set billing = order.getAddress('billing') %}
@@ -59,7 +65,7 @@
 					<p><a href="{{ url('ms.ecom.checkout.details.addresses')}}#billing">Change</a></p>
 				{% endif %}
 			</div>
-			<div class="shipping">
+			<div class="shipping col-4">
 				<h3>Delivery method</h3>
 				{% if showDeliveryMethodForm %}
 					{{ form_start(deliveryMethodForm) }}
@@ -71,49 +77,55 @@
 				{% endif %}
 			</div>
 		</section>
-		<section class="selection">
-			<table class="cf">
-				<colgroup>
-					<col width="60">
-	                <col>
-	                <col width="160">
-	                <col width="160">
-	            </colgroup>
-				<thead class="cf">
-					<tr>
-						<th class="item">Item(s)</th>
-						<th></th>
-						<th class="quantity">Qty</th>
-						<th class="price">Price</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for item in basket %}
+		<section class="selection row">
+			<div class="col-12">
+				<table class="cf">
+					<colgroup>
+						<col width="60">
+		                <col>
+		                <col width="160">
+		                <col width="160">
+		            </colgroup>
+					<thead class="cf">
 						<tr>
-							<td class="image">
-								{{ getResizedImage(item.item.product.getUnitImage(item.item.unit, 'default'), 80, 80) }}
-							</td>
-							<td class="item">
-								{{ item.item.productName }} <span>{{ item.item.options }}</span>
-							</td>
-							<td class="quantity">{{ item.quantity }}</td>
-							<td class="price"><strong>{{ (item.item.basePrice * item.quantity)|price }}</strong></td>
+							<th class="item">Item(s)</th>
+							<th></th>
+							<th class="quantity">Qty</th>
+							<th class="price">Price</th>
 						</tr>
-					{% endfor %}
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						{% for item in basket %}
+							<tr>
+								<td class="image">
+									{{ getResizedImage(item.item.product.getUnitImage(item.item.unit, 'default'), 80, 80) }}
+								</td>
+								<td class="item">
+									{{ item.item.productName }} <span>{{ item.item.options }}</span>
+								</td>
+								<td class="quantity">{{ item.quantity }}</td>
+								<td class="price"><strong>{{ (item.item.basePrice * item.quantity)|price }}</strong></td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
 		</section>
 		{{ form_start(continueForm) }}
-			<section class="checkout-note">
+		<section class="row">
+			<div class="checkout-note col-8">
 				{{ form_rest(continueForm) }}
-			</section>
+			</div>
 			{% import 'Message:Mothership:Ecommerce::checkout:totals' as totals %}
 			{{ totals.renderTotals(order) }}
-			<nav class="checkout-nav">
+		</section>
+		<nav class="checkout-nav row">
+			<div class="col-12">
 				<a href="/checkout" class="button cancel">Back to selection</a>
 				<button class="button continue">Continue to payment</button>
 				{# <a href="{{ url('ms.ecom.checkout.payment') }}" class="button continue">Continue to secure payment</a> #}
-			</nav>
+			</div>
+		</nav>
 		{{ form_end(continueForm) }}
 	</main>
 

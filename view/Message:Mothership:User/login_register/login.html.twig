@@ -4,9 +4,11 @@
 
 {% block content %}
 	<main class="content">
-		<h1>{{ 'ms.user.login.title'|trans }}</h1>
-		<section class="account">
-			<div class="column">
+		<div class="col-12">
+			<h1>{{ 'ms.user.login.title'|trans }}</h1>
+		</div>
+		<section class="login-register">
+			<div class="col-6">
 				<h2>{{ app.cfg.app.name }} members</h2>
 				{% block form %}
 					{{ render(controller('Message:User::Controller:Authentication#login', {
@@ -15,7 +17,7 @@
 					})) }}
 				{% endblock %}
 			</div>
-			<div class="column right">
+			<div class="col-6">
 				<h2>If you're new to the website&hellip;</h2>
 				{% block register_link %}
 					<p><a href="{{ url('ms.user.register') }}">{{ 'ms.user.login.register-link-text'|trans }}</a></p>

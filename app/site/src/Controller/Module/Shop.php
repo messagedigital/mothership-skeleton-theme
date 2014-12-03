@@ -15,7 +15,7 @@ class Shop extends Controller
 	public function productBlocks(Page $page)
 	{
 		return $this->render('Mothership:Site::module:shop:product_blocks', [
-			'pages'  => $this->get('ms-site.shop.product_page_loader')->getProductPages($page),
+			'pages'  => $this->get('app.shop.product_page_loader')->getProductPages($page),
 			'perRow' => 4,
 		]);
 	}

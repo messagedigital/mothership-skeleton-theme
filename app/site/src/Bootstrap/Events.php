@@ -3,7 +3,6 @@
 namespace Mothership\Site\Bootstrap;
 
 use Mothership\Site\EventListener;
-
 use Message\Cog\Bootstrap\EventsInterface;
 
 class Events implements EventsInterface

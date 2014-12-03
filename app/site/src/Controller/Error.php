@@ -28,8 +28,8 @@ class Error extends Controller
 			'exception' => $exception,
 		));
 
-		return $this->render('Mothership:Site::error:' . $statusCode, array(
+		return $this->render('Mothership:Site::error:' . $statusCode, [
 			'exception' => $exception,
-		));
+		]);
 	}
 }

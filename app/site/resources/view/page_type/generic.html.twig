@@ -2,7 +2,11 @@
 
 {% block content %}
 	<main class="content generic"  id="content" role="main">
-		<h1>{{ page.title }}</h1>
-		{{ content.content }}
+		<div class="row">
+			<div class="col-12">
+				<h1>{{ page.title }}</h1>
+				{{ content.content | raw }}
+			</div>
+		</div>
 	</main>
 {% endblock %}

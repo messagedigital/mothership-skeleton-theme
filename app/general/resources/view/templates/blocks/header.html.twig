@@ -1,0 +1,37 @@
+<header class="header" id="top" role="banner">
+
+	<div class="access row">
+		{# Shop Access #}
+		<div class="col-12">
+			{% block shopaccess %}
+				{% include '@Mothership:Site::module:header:shopaccess' %}
+			{% endblock %}
+			<span class="nav-open">
+				<i class="fa fa-bars" data-direction="right"></i>
+			</span>
+
+			{# Basket #}
+			{% block basket %}
+				{{ render(controller('Mothership:Site::Controller:Module:Shop#basket')) }}
+			{% endblock %}
+		</div>
+	</div>
+	<div class="row">
+		{# Site logo #}
+		<div class="col-6">
+			<h1 class="logo">
+				<a href="/">Skeleton</a>
+			</h1>
+		</div>
+		{# Site search #}
+		{% block search %}
+			{% include '@Mothership:Site::module:header:search' %}
+		{% endblock %}
+	</div>
+
+	{# Main navigation #}
+	{% block navigation %}
+		{% include '@Mothership:Site::module:header:navigation' %}
+	{% endblock %}
+
+</header>

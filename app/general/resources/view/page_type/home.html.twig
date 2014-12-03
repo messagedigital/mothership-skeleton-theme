@@ -1,0 +1,16 @@
+{% extends 'Mothership:Site::templates:base' %}
+
+{% block content %}
+	<main class="content" id="content" role="main">
+		{# Main promo #}
+		<div class="row">
+			<div class="col-12">
+				<h1>Hello and welcome to Skeleton <small>A generic eCommerce theme for Mothership</small></h1>
+			</div>
+		</div>
+		{# Newsletter #}
+		{% block newsletter %}
+			{% include '@Mothership:Site::module:home:newsletter' %}
+		{% endblock %}
+	</main>
+{% endblock %}

@@ -1,5 +1,5 @@
 /**
- * Skeleton theme jQuery
+ * Real Stars are Rare jQuery
  *
  * All general site scripts are to be contained here
  *
@@ -11,10 +11,11 @@ jQuery(document).ready(function($) {
     // Set JS class
     $('.no-js').removeClass('no-js').addClass('js');
 
-	// Resize function
-	$(window).on('resize', function() {
-
-	}).trigger('resize');
+	// Scroll to top button
+	$('.top').on('click', function(){
+		$('html, body').animate({scrollTop : 0},800);
+		return false;
+	});
 
 	// Insets the tabs menu
 	$('.tabs').prepend('<nav class="tab-menu"><ul><li class="details"><a href="#details">Details</a></li></ul></nav>');

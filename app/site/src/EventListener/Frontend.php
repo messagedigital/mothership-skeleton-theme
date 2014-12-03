@@ -66,11 +66,11 @@ class Frontend extends BaseListener implements SubscriberInterface
 			return false;
 		}
 
-		$request = $event->getRequest()->duplicate(null, null, array(
+		$request = $event->getRequest()->duplicate(null, null, [
 			'_controller' => 'Mothership\\Site\\Controller\\Error::exception',
 			'_format'     => $event->getRequest()->getRequestFormat(),
 			'exception'   => $event->getException(),
-		));
+		]);
 
 		$request->setMethod('GET');
 
