@@ -1,0 +1,43 @@
+/* ======================================================= */
+/*                                                         */
+/*                                                         */
+/*    Mothership Account  CSS                              */
+/*                                                         */
+/*                                                         */
+/* ======================================================= */
+/*
+/*
+/*    Development by Message
+/*    http://www.message.co.uk
+/*
+/*    Style Sheet v1.0
+/*    Created by Richard McCartney
+/*
+/*
+/* ======================================================= */
+
+.account nav ul {
+    margin-top: 20px;
+    border-right: 1px solid #333;
+}
+
+.account-orders {
+    width: 100%;
+    margin-bottom: 40px;
+
+    border-collapse: collapse;
+
+    vertical-align: top;
+}
+
+.order-listing th,
+.order-listing td,
+.account-orders th,
+.account-orders td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.account-orders img {
+    margin: 0 20px 0 0;
+}
