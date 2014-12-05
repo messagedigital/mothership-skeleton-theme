@@ -17,4 +17,9 @@ class App extends \Message\Cog\Application\Loader
 			'Mothership\\Site'
 		];
 	}
+
+	public function getDefaultViewNamespace()
+	{
+		return 'Mothership:Site';
+	}
 }
