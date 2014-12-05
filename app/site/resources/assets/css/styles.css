@@ -237,6 +237,9 @@
  * Navigation
  */
 
+.nav-close {
+    display: none;
+}
 
 .navigation {
     position: relative;
