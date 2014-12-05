@@ -1,11 +1,7 @@
 /**
  * Navigation pushdown menu
  *
-<<<<<<< HEAD:app/site/resources/assets/js/jquery.menu.js
  * This plugin corseponds with the navigation menu for Mothership Nucleus .
-=======
- * This plugin corseponds with the navigation menu for Mothership sites
->>>>>>> e4c26e5b331de3bff71afe98a4fb42cc4efeec2f:app/site/resources/assets/js/jquery.menu.js
  *
  * This is a *private* plugin, and should only be used by Message Digital Design.
  *

@@ -1,8 +1,5 @@
 {% stylesheets
-<<<<<<< HEAD
-=======
 	'@Mothership:Site::resources/assets/css/reset.css'
->>>>>>> e4c26e5b331de3bff71afe98a4fb42cc4efeec2f
 	'@Mothership:Site::resources/assets/css/basic.css'
 	'@Mothership:Site::resources/assets/css/layout.css'
 	'@Mothership:Site::resources/assets/css/fonts.css'
@@ -10,11 +7,7 @@
 	'@Mothership:Site::resources/assets/css/account.css'
 	'@Mothership:Site::resources/assets/css/styles.css'
 	'@Mothership:Site::resources/assets/css/mobile.css'
-<<<<<<< HEAD
-	output='/assets/css/nucleus-*.css'
-=======
-	output='/assets/css/<Add vendor name>-*.css'
->>>>>>> e4c26e5b331de3bff71afe98a4fb42cc4efeec2f
+	output='/assets/css/app-*.css'
 	filter='csscogulerewrite,?cssmin'
 %}
 <link rel="stylesheet" href="{{ asset_url }}">
@@ -26,26 +19,7 @@
 	output='/assets/css/ie8.css'
 	filter='csscogulerewrite,?cssmin'
 %}
-<<<<<<< HEAD
 	<!--[if IE 8]>
 		<link rel="stylesheet" href="{{ asset_url }}">
 	<![endif]-->
 {% endstylesheets %}
-=======
-	<!--[if IE 7]>
-	<link rel="stylesheet" href="{{ asset_url }}">
-	<![endif]-->
-{% endstylesheets %}
-
-{% stylesheets
-	'@Mothership:Site::resources/assets/css/ie9.css'
-
-	output='/assets/css/ie9.css'
-	filter='csscogulerewrite,?cssmin'
-%}
-	<!--[if IE 7]>
-	<link rel="stylesheet" href="{{ asset_url }}">
-	<![endif]-->
-{% endstylesheets %}
-
->>>>>>> e4c26e5b331de3bff71afe98a4fb42cc4efeec2f
