@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
 		// This only counts for navigation off canvas
 		if (mobile === true) {
 			navigation.css('margin-left', 0);
-			container.css('left', 300);
+			container.css('left', -offSet);
 		}
 
 	}
@@ -68,7 +68,7 @@ jQuery(document).ready(function($) {
 		closeCanvas();
 	});
 
-		// Swipe to close navigation
+	// Swipe to close navigation
 	$(function() {
 		//Enable swiping...
 		$('.nav-offcanvas').swipe( {
@@ -90,12 +90,12 @@ jQuery(document).ready(function($) {
 		// Check if the site is below 768px width
 		if ($('.container').css('max-width') == '768px') {
 			mobile = true;
-			navigation.css('margin-left', offSet);
 		} else {
 			mobile = false;
-			navigation.css('margin-left', 0);
 		}
 
-	});//.trigger('resize');
+		navigation.css('margin-left', offSet);
+
+	}).trigger('resize');
 
 });
