@@ -53,13 +53,8 @@ class Services implements ServicesInterface
 			return new \Mothership\Site\Form\Subscribe;
 		};
 
-		$services->extend('shipping.methods', function($methods, $c) {
-			$methods->add(new \Mothership\Site\ShippingMethod\UkSmall($c['country.list']));
-			$methods->add(new \Mothership\Site\ShippingMethod\UkLarge($c['country.list']));
-			$methods->add(new \Mothership\Site\ShippingMethod\EuSmall($c['country.list']));
-			$methods->add(new \Mothership\Site\ShippingMethod\EuLarge($c['country.list']));
-			$methods->add(new \Mothership\Site\ShippingMethod\RowSmall($c['country.list']));
-			$methods->add(new \Mothership\Site\ShippingMethod\RowLarge($c['country.list']));
+		$services->extend('shipping.methods', function($methods) {
+			$methods->add(new \Mothership\Site\ShippingMethod\Uk);
 
 			return $methods;
 		});

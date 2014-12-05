@@ -85,7 +85,7 @@ class Home implements PageTypeInterface
 				]
 			]))
 			->add($factory->getField('link', 'link', 'Link')->setScope('cms'))
-			->add($factory->getField('file', 'image', 'Image')->setAllowedTypes(File\Type::IMAGE)->setFieldOptions());
+			->add($factory->getField('file', 'image', 'Image')->setAllowedTypes(File\Type::IMAGE));
 		;
 
 	}
