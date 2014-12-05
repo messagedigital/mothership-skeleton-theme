@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <header class="header" id="top" role="banner">
 
 	<div class="access row">
@@ -28,10 +29,35 @@
 			{% include '@Mothership:Site::module:header:search' %}
 		{% endblock %}
 	</div>
+=======
+<header class="header" role="banner" id="top">
+	{# Site logo #}
+	<h1 class="logo">
+		<a href="/">Mothership</a>
+	</h1>
+
+	{# Shop Access #}
+	{% block shopaccess %}
+		{% include '@Mothership:Site::module:header:shopaccess' %}
+	{% endblock %}
+>>>>>>> e4c26e5b331de3bff71afe98a4fb42cc4efeec2f
 
 	{# Main navigation #}
 	{% block navigation %}
 		{% include '@Mothership:Site::module:header:navigation' %}
 	{% endblock %}
 
+<<<<<<< HEAD
+=======
+	{# Site search #}
+	{% block search %}
+		{% include '@Mothership:Site::module:header:search' %}
+	{% endblock %}
+
+	{# Basket #}
+	{% block basket %}
+		{{ render(controller('Mothership:Site::Controller:Module:Shop#basket')) }}
+	{% endblock %}
+
+>>>>>>> e4c26e5b331de3bff71afe98a4fb42cc4efeec2f
 </header>

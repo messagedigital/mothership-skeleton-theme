@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'Mothership:Site::templates:base' %}
 
 {% block content %}
@@ -12,5 +13,14 @@
 		{% block newsletter %}
 			{% include '@Mothership:Site::module:home:newsletter' %}
 		{% endblock %}
+=======
+{% extends 'Mothership:Site::templates/base' %}
+
+{% block content %}
+	<main class="content" id="content" role="main">
+		<h1>{{ content.header.header }}</h1>
+		<h2>{{ content.header.subheader }}</h2>
+		{{ content.content.content | raw }}
+>>>>>>> e4c26e5b331de3bff71afe98a4fb42cc4efeec2f
 	</main>
 {% endblock %}

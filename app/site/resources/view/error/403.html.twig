@@ -4,13 +4,11 @@
 
 {% block content %}
 	<main class="content error-page">
-		<div class="col-12">
-			<h1>Access denied</h1>
-			<p>Unfortunately, you don't currently have access to this page; only certain users are allowed to see and access this content.</p>
+		<h1>Access denied</h1>
+		<p>Unfortunately, you don't currently have access to this page; only certain users are allowed to see and access this content.</p>
 
-			{% if not app.user %}
-				<p>You may need to <a href="{{ url('ms.user.login') }}">log in</a> to access this page.</p>
-			{% endif %}
-		</div>
+		{% if not app.user %}
+			<p>You may need to <a href="{{ url('ms.user.login') }}">log in</a> to access this page.</p>
+		{% endif %}
 	</main>
 {% endblock %}

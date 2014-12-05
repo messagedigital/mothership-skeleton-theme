@@ -1,7 +1,7 @@
 /* ======================================================= */
 /*                                                         */
 /*                                                         */
-/*    Mothership Nucleus                                   */
+/*    Skeleton theme                                       */
 /*                                                         */
 /*                                                         */
 /* ======================================================= */
@@ -17,133 +17,46 @@
 /* ======================================================= */
 
 
+@media screen and (max-width: 2560px) {
+
+
+}
+
+@media screen and (max-width: 1680px) {
+
+
+}
+
+@media screen and (max-width: 1440px) {
+
+
+}
+
+@media screen and (max-width: 1280px) {
+
+
+}
+
+@media screen and (max-device-width: 1024px) {
+
+
+}
+
+@media screen and (max-width: 1024px) {
+
+
+}
+
 @media screen and (max-width: 768px) {
 
-	p,
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	blockquote,
-	img,
-	svg,
-	object,
-	iframe,
-	embed,
-	canvas,
-	video,
-	audio,
-	form,
-	input,
-	select,
-	textarea,
-	ul,
-	ol,
-	dl {
-		width: 100%;
-	}
 
-	/*
-	 * Header
-	 */
+}
 
-	.logo {
-		margin-bottom: 0;
-	}
+@media screen and (max-width: 600px) {
 
-	/*
-	 * Search
-	 */
+}
 
-	.search form {
-		float: left;
-	}
+@media screen and (max-width: 420px) {
 
-	.search label {
-		display: none;
-	}
 
-	/*
-	 * Navigation
-	 */
-
-	.access .nav-open {
-		display: block;
-		height: 32px;
-		width: 32px;
-		display: inline-block;
-		font-size: 2em;
-		cursor: pointer;
-	}
-
-	.access .nav-close {
-		display: block;
-		height: 32px;
-		width: 32px;
-		display: inline-block;
-		font-size: 2em;
-		cursor: pointer;
-		position: absolute;
-		top: 17px;
-		right: 5px;
-	}
-
-	.shop-access {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		max-width: 300px;
-		background: #EEE;
-		padding: 19px 15px 18px;
-		border-bottom: 1px solid #333;
-		z-index: 1000;
-	}
-
-	.nav-offcanvas {
-		-webkit-transition: margin .4s;
-		     -o-transition: margin .4s;
-		        transition: margin .4s;
-	}
-
-	.navigation {
-		position: fixed;
-		top: 73px;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		max-width: 300px;
-		padding-top: 20px;
-	}
-
-	.navigation ul {
-		padding: 0 10px;
-	}
-
-	.navigation li {
-		float: left;
-		width: 100%;
-	}
-
-	.sub-navigation {
-		position: relative;
-		top: inherit;
-		display: block;
-		float: left;
-		width: 100%;
-		height: auto;
-		padding: 0;
-		background: none;
-		padding-top: 20px;
-	}
-
-	.subnav-wrapper {
-		display: none !important;
-	}
-
-	.navigation li,
-	.subnav-wrapper li {
-		padding: 0 0 20px;
-	}
 }

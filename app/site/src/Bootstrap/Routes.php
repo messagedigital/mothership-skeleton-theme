@@ -20,25 +20,24 @@ class Routes implements RoutesInterface, ContainerAwareInterface
 
 	public function registerRoutes($router)
 	{
-		// Call once ssl is required:
-		// $this->enableSSL($router);
+//		$this->enableSSL($router);
 
-		$router->add('app.subscribe.action', '/mailing-list/subscribe', 'Mothership:Site::Controller:Module:Subscribe#subscribeAction')
+		$router->add('ms-site.subscribe.action', '/mailing-list/subscribe', 'Mothership:Site::Controller:Module:Subscribe#subscribeAction')
 			->setMethod('POST');
 	}
 
-	public function enableSSL($router)
-	{
-		// Skip if not in live or dev environment
-		// TODO: remove dev from this list once the PR is approved
-		if (!in_array($this->_services['environment']->get(), ['live'])) {
-			return false;
-		}
-
-		$router->getDefault()->setSchemes(['https']);
-
-		foreach ($router as $key => $collection) {
-			$router[$key]->setSchemes(['https']);
-		}
-	}
+//	public function enableSSL($router)
+//	{
+//		// Skip if not in live or dev environment
+//		// TODO: remove dev from this list once the PR is approved
+//		if (!in_array($this->_services['environment']->get(), ['live'])) {
+//			return false;
+//		}
+//
+//		$router->getDefault()->setSchemes(['https']);
+//
+//		foreach ($router as $key => $collection) {
+//			$router[$key]->setSchemes(['https']);
+//		}
+//	}
 }

@@ -1,7 +1,7 @@
 /* ======================================================= */
 /*                                                         */
 /*                                                         */
-/*    Skeleton theme style                                 */
+/*    Skeleton theme                                       */
 /*                                                         */
 /*                                                         */
 /* ======================================================= */
@@ -15,507 +15,79 @@
 /*
 /*
 /* ======================================================= */
-/*
-/*
-/*    Skeleton Theme
-/*
-/*    This is a basic theme created by Richard McCartney for
-/*    Mothership. You may use this as a base for your future eCommerce
-/*    website or start fresh with a new design.
-/*
-/*    No styles in this theme are system specific more controlling
-/*    the main aesthetic feel and overall placement of elements for
-/*    this eCommerce site.
-/*
-/*
-/*    Table of Content
-/* ------------------------------------------------------- */
-/*
-/*
-/*    #Header & Shop access
-/*    #Home page
-/*    #Product listing
-/*    #Product page
-/*    #Blog listing
-/*    #Blog post
-/*    #Generic page
-/*    #Search results
-/*    #Footer
-/*    #Contact
-/*
-/*
-/* ======================================================= */
 
 
-/*    Header
-/* ------------------------------------------------------- */
+/* Header
+---------------------------------------------------------- */
 
 
-/*
- * Access elements; Account links, Search & Basket
- */
+/* Logo */
 
 
-.access {
-    padding: 20px 0;
+/* Navigation */
 
-    border-bottom: 1px solid #ccc;
-}
 
-.access .col-12 {
-    margin: 0;
-}
+/* Search */
 
-.access .nav-open {
-    display: none;
-}
 
+/* Basket */
 
-/*
- * Access links
- */
 
+/* Shop access */
 
-.shop-access {
-    float: left;
-}
 
-.shop-access ul {
-    display: inline-block;
-
-    padding: 0;
-}
-
-.shop-access li {
-    line-height: 32px;
-
-    float: left;
-
-    height: 32px;
-    margin: 0 20px 0 0;
-
-    list-style-type: none;
-}
-
-
-/*
- * Basket
- */
-
-
-.basket-icon {
-    line-height: 32px;
-
-    float: right;
-
-    height: 32px;
-
-    text-decoration: none;
-}
-
-.basket-icon span {
-    display: inline-block;
-
-    width: 32px;
-    margin-left: 10px;
-
-    text-align: center;
-
-    color: #fff;
-    border-radius: 16px;
-    background-color: #333;
-}
-
-
-.basket {
-    width: 300px;
-    background: #333;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    margin-right: -300px;
-
-    color: #FFF;
-
-    -webkit-transition: margin .4s;
-         -o-transition: margin .4s;
-            transition: margin .4s;
-}
-
-.basket .contents {
-    float: left;
-    width: 100%;
-    height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
+/* Home page
+---------------------------------------------------------- */
 
-.basket .contents::-webkit-scrollbar { 
-    display: none; 
-}
 
-.basket a {
-    color: #FFF;
-}
-
-.basket nav {
-    position: relative;
-}
-
-.basket nav div {
-    margin-right: 50px;
-    height: 50px;
-    border-bottom: 1px solid #444;
-    text-align: center;
-}
-
-.basket nav a {
-    line-height: 50px;
-    text-align: center;
-}
-
-.basket .close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50px;
-    height: 50px;
-    border-bottom: 1px solid #444;
-    border-left: 1px solid #444;
-}
+/* Product listsing
+---------------------------------------------------------- */
 
-.basket .details {
-    padding: 20px;
-}
-
-.basket ul {
-    padding: 0;
-}
 
-.basket li {
-    list-style-type: none;
-    padding: 20px 20px 40px;
-    padding-bottom: 1px solid #444;
-    float: left;
-}
+/* Product Page
+---------------------------------------------------------- */
 
-.basket .empty {
-    padding: 20px;
-}
 
-.basket .go-shopping {
-    width: 100%;
-    text-align: center;
-    float: left;
-}
+/* Product info */
 
-/*
- * Search
- */
 
+/* Gallery */
 
-.search form {
-    float: right;
 
-    margin: 20px 0;
-    width: auto;
-}
+/* Tabs */
 
 
-/*
- * Logo
- */
+/* Content page(s)
+---------------------------------------------------------- */
 
 
-.logo {
-}
+/* Blog listing
+---------------------------------------------------------- */
 
 
-/*
- * Navigation
- */
+/* Blog post
+---------------------------------------------------------- */
 
-.nav-close {
-    display: none;
-}
 
-.navigation {
-    position: relative;
-    z-index: 2;
-    padding: 0 1.0309278350515463%;
+/* Checkout (overrides)
+---------------------------------------------------------- */
 
-    float: left;
 
-    width: 100%;
+/* Account (overrides)
+---------------------------------------------------------- */
 
-    background: #EEE;
-}
 
-.navigation ol,
-.navigation ul,
-.navigation li,
-.subnav-wrapper ul,
-.subnav-wrapper li {
-    float: left;
-}
+/* Returns (overrides)
+---------------------------------------------------------- */
 
-.navigation ol,
-.navigation ul,
-.subnav-wrapper ul {
-    max-width: 100%;
-}
 
-.navigation li,
-.subnav-wrapper li {
-    width: auto;
-    margin: 0 20px 0 0;
-    padding: 20px 0;
+/* Search results (overrides)
+---------------------------------------------------------- */
 
-    list-style-type: none;
-}
 
-.navigation a,
-.subnav-wrapper a {
+/* Error pages
+---------------------------------------------------------- */
 
-    float: left;
 
-    height: 100%;
-
-}
-
-.navigation .current > a,
-.sub-navigation .current > a {
-    color: #3071A9;
-}
-
-
-/*
- * Sub navigation
- */
-
-
-.subnav-wrapper,
-.sub-navigation {
-    position: absolute;
-    z-index: 1000;
-    left: 0;
-
-    display: none;
-    float: left;
-
-    width: 100%;
-
-    background: #DDD;
-}
-
-.sub-navigation ul {
-    margin: 0;
-}
-
-.subnav-wrapper {
-    position: relative;
-    z-index: 1;
-
-    display: block;
-
-    -webkit-transition: margin .2s;
-         -o-transition: margin .2s;
-            transition: margin .2s;
-}
-
-.sub-navigation .current a,
-.subnav-wrapper .current a {
-    color: #3071a9;
-}
-
-.no-js .navigation li:hover .sub-navigation {
-    position: absolute;
-    z-index: 1;
-    top: 56px;
-    padding: 0 20px;
-
-    display: block;
-}
-
-
-/*    Home page
-/* ------------------------------------------------------- */
-
-/*
- * Here add all your classes and Id's related to home page elements
- * modules and content.
- */
-
-
-/*    Product listing
-/* ------------------------------------------------------- */
-
-/*
- * Here add all your classes and Id's related to product
- * listing elements modules and content.
- */
-
-
-/*    Product page
-/* ------------------------------------------------------- */
-
-/*
- * Here add all your classes and Id's related to product
- * page elements modules and content.
- */
-
-
-.gallery .thumbnails {
-    padding: 0;
-    list-style-type: none;
-    text-align: center;
-}
-
-.gallery .thumbnails li {
-    float: left;
-}
-
-.product-info select {
-    position: relative;
-    float: none;
-    clear: both;
-}
-
-.error-msg {
-    position: relative;
-
-    width: 100%;
-    max-width: 294px;
-    margin-bottom: 20px;
-    padding: 5px 0;
-
-    text-align: center;
-
-    color: #fff;
-    border-radius: 3px;
-    background: #bf1e2a;
-}
-
-.error-msg p {
-    margin: 0;
-}
-
-.error-msg:before {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-
-    display: block;
-
-    width: 0;
-    height: 0;
-    margin-left: -10px;
-
-    content: '';
-
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #bf1e2a;
-    border-left: 10px solid transparent;
-}
-
-.modal-image {
-    float: left;
-    width: 100%;
-    position: relative;
-    cursor: pointer;
-}
-
-.modal-image span {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-.tab-menu {
-    float: left;
-    width: 100%;
-    border-bottom: 1px solid #CCC;
-    margin-bottom: 20px;
-}
-
-.tab-menu li {
-    float: left;
-    width: auto;
-    font-size: .875em;
-    font-weight: 400;
-    line-height: 1.42857143;
-    display: inline-block;
-    margin-right: 2px;
-    margin-bottom: 0;
-    padding: 5px 15px;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap;
-    color: #333;
-    border: 1px solid transparent;
-    border-bottom: none;
-    border-color: #CCC;
-    border-radius: 4px 4px 0px 0px;
-    background-color: #fff;
-    background-image: none;
-    text-decoration: none;
-    opacity: 0.7;
-}
-
-.tab-menu li.current {
-    opacity: 1;
-    border-bottom: 1px solid #FFF;
-    padding-bottom: 6px;
-    margin-bottom: -1px;
-}
-
-/*    Search results
-/* ------------------------------------------------------- */
-
-
-.search-results {
-    padding: 0;
-}
-
-.search-results li {
-    float: left;
-    width: 100%;
-    list-style-type: none;
-    border-bottom: 1px solid #CCC;
-    padding-bottom: 20px;
-}
-
-
-/*    Footer
-/* ------------------------------------------------------- */
-
-
-.top {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: inline-block;
-}
-
-.footer {
-    position: relative;
-    z-index: 2;
-    padding-bottom: 20px;
-
-    float: left;
-
-    width: 100%;
-
-    background: #EEE;
-}
-
-.copy {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+/* Footer
+---------------------------------------------------------- */

@@ -14,10 +14,10 @@ class Services implements ServicesInterface
 	{
 		$services->extend('cms.page.types', function($collection, $c) {
 			$collection
+				->add(new PageType\Home)
 				->add(new PageType\Generic)
 				->add(new PageType\Product)
 				->add(new PageType\ProductListing)
-				->add(new PageType\Home)
 				->add(new PageType\OurStory)
 				->add(new PageType\RedirectToFirstChild)
 			;

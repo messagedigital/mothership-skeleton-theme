@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'Mothership:Site::templates:base' %}
 
 {% block content %}
@@ -7,6 +8,13 @@
 				<h1>{{ page.title }}</h1>
 			</div>
 		</div>
+=======
+{% extends 'Mothership:Site::templates/base' %}
+
+{% block content %}
+	<main class="content" id="content" role="main">
+		<h1>{{ page.title }}</h1>
+>>>>>>> e4c26e5b331de3bff71afe98a4fb42cc4efeec2f
 		{{ render(controller('Mothership:Site::Controller:Module:Shop#productBlocks', {
 			page: page
 		})) }}

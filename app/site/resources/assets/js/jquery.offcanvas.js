@@ -1,7 +1,11 @@
 /**
  * Navigation functionality
  *
+<<<<<<< HEAD:app/site/resources/assets/js/jquery.offcanvas.js
  * This plugin corseponds with the ading to Navigation.
+=======
+ * This plugin corseponds with the Off canvas basket for Mothership.
+>>>>>>> e4c26e5b331de3bff71afe98a4fb42cc4efeec2f:app/site/resources/assets/js/jquery.offcanvas.js
  *
  * This is a *private* plugin, and should only be used by Message Digital Design.
  *
