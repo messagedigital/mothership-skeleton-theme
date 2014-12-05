@@ -14,7 +14,7 @@ class App extends \Message\Cog\Application\Loader
 			'Message\\Mothership\\Commerce',
 			'Message\\Mothership\\Ecommerce',
 			'Message\\Mothership\\OrderReturn',
-			'App\\General'
+			'Mothership\\Site'
 		);
 	}
 }
