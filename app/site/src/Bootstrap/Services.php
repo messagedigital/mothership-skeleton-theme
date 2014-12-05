@@ -1,8 +1,8 @@
 <?php
 
-namespace App\General\Bootstrap;
+namespace Mothership\Site\Bootstrap;
 
-use App\General\PageType;
+use Mothership\Site\PageType;
 
 use Message\Cog\Bootstrap\ServicesInterface;
 use Message\Mothership\Commerce\Product;
@@ -50,22 +50,22 @@ class Services implements ServicesInterface
 		});
 
 		$services['app.form.subscribe'] = function($c) {
-			return new \App\General\Form\Subscribe;
+			return new \Mothership\Site\Form\Subscribe;
 		};
 
 		$services->extend('shipping.methods', function($methods, $c) {
-			$methods->add(new \App\General\ShippingMethod\UkSmall($c['country.list']));
-			$methods->add(new \App\General\ShippingMethod\UkLarge($c['country.list']));
-			$methods->add(new \App\General\ShippingMethod\EuSmall($c['country.list']));
-			$methods->add(new \App\General\ShippingMethod\EuLarge($c['country.list']));
-			$methods->add(new \App\General\ShippingMethod\RowSmall($c['country.list']));
-			$methods->add(new \App\General\ShippingMethod\RowLarge($c['country.list']));
+			$methods->add(new \Mothership\Site\ShippingMethod\UkSmall($c['country.list']));
+			$methods->add(new \Mothership\Site\ShippingMethod\UkLarge($c['country.list']));
+			$methods->add(new \Mothership\Site\ShippingMethod\EuSmall($c['country.list']));
+			$methods->add(new \Mothership\Site\ShippingMethod\EuLarge($c['country.list']));
+			$methods->add(new \Mothership\Site\ShippingMethod\RowSmall($c['country.list']));
+			$methods->add(new \Mothership\Site\ShippingMethod\RowLarge($c['country.list']));
 
 			return $methods;
 		});
 
 		$services->extend('order.dispatch.methods', function($methods) {
-			$methods->add(new \App\General\DispatchMethod\Manual);
+			$methods->add(new \Mothership\Site\DispatchMethod\Manual);
 
 			return $methods;
 		});
@@ -92,7 +92,7 @@ class Services implements ServicesInterface
 
 		// CMS
 		$services['app.shop.product_page_loader'] = function($c) {
-			return new \App\General\Shop\ProductPageLoader($c['cms.page.loader'], $c['cms.page.content_loader']);
+			return new \Mothership\Site\Shop\ProductPageLoader($c['cms.page.loader'], $c['cms.page.content_loader']);
 		};
 	}
 }

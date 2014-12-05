@@ -1,6 +1,6 @@
 <?php
 
-namespace App\General\Bootstrap;
+namespace Mothership\Site\Bootstrap;
 
 use Message\Cog\Bootstrap\RoutesInterface;
 use Message\Cog\Service\ContainerInterface;
@@ -23,7 +23,7 @@ class Routes implements RoutesInterface, ContainerAwareInterface
 		// Call once ssl is required:
 		// $this->enableSSL($router);
 
-		$router->add('app.subscribe.action', '/mailing-list/subscribe', 'App:General::Controller:Module:Subscribe#subscribeAction')
+		$router->add('app.subscribe.action', '/mailing-list/subscribe', 'Mothership:Site::Controller:Module:Subscribe#subscribeAction')
 			->setMethod('POST');
 	}
 

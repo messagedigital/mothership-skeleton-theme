@@ -1,4 +1,4 @@
-{% extends 'App:General::templates:base' %}
+{% extends 'Mothership:Site::templates:base' %}
 
 {% block content %}
 	<main class="content" id="content" role="main">
@@ -10,7 +10,7 @@
 		</div>
 		{# Newsletter #}
 		{% block newsletter %}
-			{% include '@App:General::module:home:newsletter' %}
+			{% include '@Mothership:Site::module:home:newsletter' %}
 		{% endblock %}
 	</main>
 {% endblock %}

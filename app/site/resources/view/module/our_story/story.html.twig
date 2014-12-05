@@ -3,7 +3,7 @@
 {% macro renderVideo(url, width, height) %}
 	{{
 		render(controller(
-			'App:General::Controller:Module:Vimeo#embed',
+			'Mothership:Site::Controller:Module:Vimeo#embed',
 			{
 				'url': url,
 				'width': width,

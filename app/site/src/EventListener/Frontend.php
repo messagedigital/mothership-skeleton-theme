@@ -1,6 +1,6 @@
 <?php
 
-namespace App\General\EventListener;
+namespace Mothership\Site\EventListener;
 
 use Message\Mothership\CMS\Page;
 

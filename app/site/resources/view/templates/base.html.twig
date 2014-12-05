@@ -3,12 +3,12 @@
 <head>
 	{# Site meta details #}
 	{% block meta %}
-		{% include '@App:General::templates:blocks:meta' %}
+		{% include '@Mothership:Site::templates:blocks:meta' %}
 	{% endblock %}
 
 	{# Site stylesheets #}
 	{% block stylesheets %}
-		{% include '@App:General::templates:blocks:stylesheets' %}
+		{% include '@Mothership:Site::templates:blocks:stylesheets' %}
 	{% endblock %}
 
 	<!--[if lt IE 9]>
@@ -17,7 +17,7 @@
 
 	{# Site javascript #}
 	{% block javascripts %}
-		{% include '@App:General::templates:blocks:javascript' %}
+		{% include '@Mothership:Site::templates:blocks:javascript' %}
 	{% endblock %}
 </head>
 <body>
@@ -26,8 +26,8 @@
 		<div class="inner-container">
 		{# Header #}
 		{% block header %}
-			{% include '@App:General::templates:blocks:header' %}
-			{% include '@App:General::templates:blocks:feedback' %}
+			{% include '@Mothership:Site::templates:blocks:header' %}
+			{% include '@Mothership:Site::templates:blocks:feedback' %}
 		{% endblock %}
 
 		{# Content #}
@@ -36,7 +36,7 @@
 
 		{# Footer #}
 		{% block footer %}
-			{% include '@App:General::templates:blocks:footer' %}
+			{% include '@Mothership:Site::templates:blocks:footer' %}
 		{% endblock %}
 		</div>
 	</div>

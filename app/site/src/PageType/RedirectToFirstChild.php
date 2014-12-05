@@ -1,6 +1,6 @@
 <?php
 
-namespace App\General\PageType;
+namespace Mothership\Site\PageType;
 
 use Message\Mothership\CMS\PageType\PageTypeInterface;
 

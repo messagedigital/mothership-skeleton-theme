@@ -1,6 +1,6 @@
 <?php
 
-namespace App\General\Controller\Module;
+namespace Mothership\Site\Controller\Module;
 
 use Message\Cog\Controller\Controller;
 use Message\Cog\Field\Type\Text;
@@ -14,7 +14,7 @@ class Vimeo extends Controller
 		$url  = explode('/', $url->getValue());
 		$code = array_pop($url);
 
-		return $this->render('App:General::module:vimeo:embed', [
+		return $this->render('Mothership:Site::module:vimeo:embed', [
 			'code'   => $code,
 			'width'  => $width,
 			'height' => $height,

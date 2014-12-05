@@ -1,6 +1,6 @@
 <?php
 
-namespace App\General\Controller;
+namespace Mothership\Site\Controller;
 
 use Message\Cog\Controller\Controller;
 
@@ -28,7 +28,7 @@ class Error extends Controller
 			'exception' => $exception,
 		));
 
-		return $this->render('App:General::error:' . $statusCode, array(
+		return $this->render('Mothership:Site::error:' . $statusCode, array(
 			'exception' => $exception,
 		));
 	}

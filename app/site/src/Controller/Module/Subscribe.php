@@ -1,6 +1,6 @@
 <?php
 
-namespace App\General\Controller\Module;
+namespace Mothership\Site\Controller\Module;
 
 use Message\Cog\Controller\Controller;
 
@@ -14,7 +14,7 @@ class Subscribe extends Controller
 			['action' => $this->generateUrl('app.subscribe.action')]
 		);
 
-		return $this->render('App:General::module:subscribe:subscribe', [
+		return $this->render('Mothership:Site::module:subscribe:subscribe', [
 			'form' => $form,
 		]);
 	}

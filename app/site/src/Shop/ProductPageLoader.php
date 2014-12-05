@@ -1,6 +1,6 @@
 <?php
 
-namespace App\General\Shop;
+namespace Mothership\Site\Shop;
 
 use Message\Mothership\CMS\Page;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\General\Task;
+namespace Mothership\Site\Task;
 
 use Message\Cog\Console\Task\Task;
 use Message\Cog\Filesystem\FileType\CSVFile;
@@ -8,7 +8,7 @@ use Message\Cog\Filesystem\FileType\CSVFile;
 class CsvLoader
 {
 	protected $_csvs = [
-		'apparel'        => 'cog://@App:General::resources:porting:apparel.csv',
+		'apparel'        => 'cog://@Mothership:Site::resources:porting:apparel.csv',
 	];
 
 	protected $_structures = [

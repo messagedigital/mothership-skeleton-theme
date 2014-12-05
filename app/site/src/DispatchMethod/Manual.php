@@ -1,6 +1,6 @@
 <?php
 
-namespace App\General\DispatchMethod;
+namespace Mothership\Site\DispatchMethod;
 
 use Message\Mothership\Commerce\Order\Entity\Dispatch\MethodInterface;
 

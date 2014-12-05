@@ -1,8 +1,8 @@
 <?php
 
-namespace App\General\Bootstrap;
+namespace Mothership\Site\Bootstrap;
 
-use App\General\EventListener;
+use Mothership\Site\EventListener;
 
 use Message\Cog\Bootstrap\EventsInterface;
 

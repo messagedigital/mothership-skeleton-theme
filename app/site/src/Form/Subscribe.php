@@ -1,6 +1,6 @@
 <?php
 
-namespace App\General\Form;
+namespace Mothership\Site\Form;
 
 use Symfony\Component\Form;
 use Symfony\Component\Validator\Constraints;
