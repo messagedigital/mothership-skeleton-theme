@@ -1,7 +1,7 @@
 /**
  * Navigation pushdown menu
  *
- * This plugin corseponds with the navigation menu for Real Stars are Rare.
+ * This plugin corseponds with the navigation menu for Mothership Nucleus .
  *
  * This is a *private* plugin, and should only be used by Message Digital Design.
  *
