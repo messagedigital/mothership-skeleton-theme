@@ -57,7 +57,12 @@
 								</td>
 								<td class="quantity">{{ form_widget(form['items'][item.item.unitID]) }}
 								</td>
-								<td class="price" data-checkout-live-update>{{ (item.item.basePrice * item.quantity)|price }}
+								<td class="price" data-checkout-live-update>
+									{% if item.item.basePrice < item.item.rrp %}
+										<span class="sale"><s>Was {{ (item.item.rrp * item.quantity)|price }}</s> Now {{ (item.item.basePrice * item.quantity)|price }}</span>
+									{% else %}
+										{{ (item.item.basePrice * item.quantity)|price }}
+									{% endif %}
 								</td>
 								<td class="remove"><a href="{{ url('ms.ecom.checkout.remove',{'unitID':item.item.unitID}) }}">Remove</a></td>
 								</tr>

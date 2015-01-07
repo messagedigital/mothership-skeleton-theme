@@ -1,0 +1,20 @@
+<div class="product">
+	<a href="{{ productSlug }}">
+		{{ getResizedImage(image, 360,455) }}
+		<div class="details">
+			<div class="alignment-mid">
+				<h3>{{ productName }}</h3>
+				<h5>
+					{% if retailPrice < rrpPrice %}
+						<span class="sale"><s>Was {{ rrpPrice | price }}</s> Now
+					{% endif %}
+					{% if variablePricing %} From {% endif %}
+						{{ retailPrice | price }}
+					{% if retailPrice < rrpPrice %}
+						</span>
+					{% endif %}
+				</h5>
+			</div>
+		</div>
+	</a>
+</div>

@@ -1,4 +1,6 @@
 <section class="product-info col-6">
+{% set sale = content.product.product.product.getPriceFrom < content.product.product.product.getPriceFrom('rrp') %}
+
 	{# Product title & varient #}
 	<h1>
 		{{ product.displayName }}
@@ -11,8 +13,19 @@
 
 	{# Price #}
 	<h3>
-		{{ product.hasVariablePricing and not content.product.option.value ? 'From ' }}
-		{{ product.getPriceFrom | price }}
+		{% if sale %}<span class="sale">{% endif %}
+
+		{{ content.product.product.product.hasVariablePricing('retail', null, {
+			(content.product.option.name): content.product.option.value
+		}) ? 'From ' }}
+
+		{{ content.product.product.product.getPriceFrom | price }}
+
+		{% if sale %}
+			<s>Was: {{ content.product.product.product.getPriceFrom('rrp') | price }}</s>
+		{% endif %}
+
+		{% if sale %}</span>{% endif %}
 	</h3>
 
 	{# Product selector#}
@@ -21,7 +34,8 @@
 			product: content.product.product.product,
 			options: {
 				(content.product.option.name): content.product.option.value
-			}
+			},
+			showVariablePricing: true
 		}))
 	}}
 

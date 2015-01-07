@@ -104,7 +104,13 @@
 									{{ item.item.productName }} <span>{{ item.item.options }}</span>
 								</td>
 								<td class="quantity">{{ item.quantity }}</td>
-								<td class="price"><strong>{{ (item.item.basePrice * item.quantity)|price }}</strong></td>
+							<td class="price">
+								{% if item.item.basePrice < item.item.rrp %}
+									<span class="sale"><s>Was {{ (item.item.rrp * item.quantity)|price }}</s> Now {{ (item.item.basePrice * item.quantity)|price }}</span>
+								{% else %}
+									{{ (item.item.basePrice * item.quantity)|price }}
+								{% endif %}
+							</td>
 							</tr>
 						{% endfor %}
 					</tbody>

@@ -96,7 +96,13 @@
 								<td class="item">
 									{{ item.first.productName }} <span>{{ item.first.options }}</span></td>
 								<td class="quantity">{{ item.quantity }}
-								<td class="price"><strong>{{ item.sum('basePrice')|price }}</strong></td>
+							<td class="price">
+								{% if item.sum('rrp') > item.sum('basePrice') %}
+									<span class="sale"><s>Was {{ item.sum('rrp')|price }}</s> Now {{ item.sum('basePrice')|price }}</span>
+								{% else %}
+									<strong>{{ item.sum('basePrice')|price }}</strong>
+								{% endif %}
+							</td>
 							</tr>
 						{% endfor %}
 					</tbody>
