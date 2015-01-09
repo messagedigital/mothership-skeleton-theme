@@ -1,32 +1,31 @@
 {% extends 'Message:Mothership:User::account:account-layout' %}
 
 {% block account_content %}
+<div class="col-12 no-gutter">
+	<h1>Edit account</h1>
+</div>
+<div class="col-6 no-gutter-left">
+	<section>
+		<h4>{{ 'Account Details '}}</h4>
 
-<div class="row">
-	<h3>Edit Account</h3>
-	<div class="column">
-		<section>
-			<h4>{{ 'Account Details '}}</h4>
+		{{ form_start(detailForm) }}
+			{{ form_rest(detailForm) }}
+			<button type="submit">Update</button>
+		{{ form_end(detailForm) }}
+	</section>
+</div>
+<div class="col-6 no-gutter-right">
+	<section>
+		<h4>{{ 'Change Password'}}</h4>
 
-			{{ form_start(detailForm) }}
-				{{ form_rest(detailForm) }}
-				<button type="submit">Update</button>
-			{{ form_end(detailForm) }}
-		</section>
-	</div>
-	<div class="column right">
-		<section>
-			<h4>{{ 'Change Password'}}</h4>
-
-			{{ form_start(passwordForm) }}
-				{{ form_rest(passwordForm) }}
-				<button type="submit">Save Password</button>
-			{{ form_end(passwordForm) }}
-		</section>
-	</div>
+		{{ form_start(passwordForm) }}
+			{{ form_rest(passwordForm) }}
+			<button type="submit">Save Password</button>
+		{{ form_end(passwordForm) }}
+	</section>
 </div>
 <div class="row">
-	<div class="column">
+	<div class="col-6 no-gutter-left">
 		<section>
 			<h4>{{ 'Billing Address '}}</h4>
 
@@ -36,7 +35,7 @@
 			{{ form_end(billingForm) }}
 		</section>
 	</div>
-	<div class="column right">
+	<div class="col-6 no-gutter-right">
 		<section>
 			<h4>{{ 'Delivery Address '}}</h4>
 
@@ -47,7 +46,4 @@
 		</section>
 	</div>
 </div>
-
-
-
 {% endblock %}

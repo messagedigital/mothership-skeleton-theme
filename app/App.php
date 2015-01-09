@@ -1,4 +1,5 @@
 <?php
+
 class App extends \Message\Cog\Application\Loader
 {
 	protected function _registerModules()
@@ -13,10 +14,7 @@ class App extends \Message\Cog\Application\Loader
 			'Message\\Mothership\\Commerce',
 			'Message\\Mothership\\Ecommerce',
 			'Message\\Mothership\\OrderReturn',
-			'Message\\Mothership\\Voucher',
-			'Message\\Mothership\\Discount',
-			'Message\\Mothership\\Report',
-			'Mothership\\Site',
+			'Mothership\\Site'
 		];
 	}
 }

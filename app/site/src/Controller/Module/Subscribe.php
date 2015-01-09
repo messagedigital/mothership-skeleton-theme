@@ -9,9 +9,9 @@ class Subscribe extends Controller
 	public function subscribe()
 	{
 		$form = $this->createForm(
-			$this->get('ms-site.form.subscribe'),
+			$this->get('app.form.subscribe'),
 			null,
-			['action' => $this->generateUrl('ms-site.subscribe.action')]
+			['action' => $this->generateUrl('app.subscribe.action')]
 		);
 
 		return $this->render('Mothership:Site::module:subscribe:subscribe', [
@@ -21,7 +21,7 @@ class Subscribe extends Controller
 
 	public function subscribeAction()
 	{
-		$form = $this->createForm($this->get('ms-site.form.subscribe'));
+		$form = $this->createForm($this->get('app.form.subscribe'));
 
 		$form->handleRequest();
 

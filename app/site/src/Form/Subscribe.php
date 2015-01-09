@@ -9,7 +9,7 @@ class Subscribe extends Form\AbstractType
 {
 	public function getName()
 	{
-		return 'ms-site_subscribe';
+		return 'app_subscribe';
 	}
 
 	public function buildForm(Form\FormBuilderInterface $builder, array $options)

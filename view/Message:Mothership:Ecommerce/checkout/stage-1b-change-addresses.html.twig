@@ -2,28 +2,34 @@
 
 {% block content %}
 	<main class="checkout" id="main-content">
-		<h1>Checkout</h1>
-		<section class="progress">
-			<div>
-				<p><strong>Stage 01</strong> Your selection</p>
-			</div>
-			<div class="active">
-				<p><strong>Stage 02</strong> Your details</p>
-			</div>
-			<div>
-				<p><strong>Stage 03</strong> Delivery details</p>
-			</div>
-			<div>
-				<p><strong>Stage 04</strong> Payment</p>
-			</div>
-			<div>
-				<p><strong>Stage 05</strong> Confirmation</p>
+		<section class="row">
+			<div class="col-12">
+				<h1>Checkout</h1>
+				<div class="progress">
+					<div>
+						<p><strong>Stage 01</strong> Your selection</p>
+					</div>
+					<div class="active">
+						<p><strong>Stage 02</strong> Your details</p>
+					</div>
+					<div>
+						<p><strong>Stage 03</strong> Delivery details</p>
+					</div>
+					<div>
+						<p><strong>Stage 04</strong> Payment</p>
+					</div>
+					<div>
+						<p><strong>Stage 05</strong> Confirmation</p>
+					</div>
+				</div>
 			</div>
 		</section>
 		{{ form_start(form) }}
-			<section class="billing registration" id="billing">
-				<h3>Billing Address</h3>
-				<div class="column">
+			<section class="billing registration row" id="billing">
+				<div class="col-12">
+					<h3>Billing Address</h3>
+				</div>
+				<div class="col-6">
 					{{ form_row(form.billing.title) }}
 					{{ form_row(form.billing.forename) }}
 					{{ form_row(form.billing.surname) }}
@@ -32,7 +38,7 @@
 					{{ form_row(form.billing.address_line_3) }}
 					{{ form_row(form.billing.address_line_4) }}
 				</div>
-				<div class="column right">
+				<div class="col-6">
 					{{ form_row(form.billing.town) }}
 					{{ form_row(form.billing.postcode) }}
 					{{ form_row(form.billing.telephone) }}
@@ -50,9 +56,11 @@
 					}) }}
 				</div>
 			</section>
-			<section class="delivery registration" id="delivery">
-				<h3>Delivery Address</h3>
-				<div class="column">
+			<section class="delivery registration row" id="delivery">
+				<div class="col-12">
+					<h3>Delivery Address</h3>
+				</div>
+				<div class="col-6">
 					{{ form_row(form.delivery.title) }}
 					{{ form_row(form.delivery.forename) }}
 					{{ form_row(form.delivery.surname) }}
@@ -61,7 +69,7 @@
 					{{ form_row(form.delivery.address_line_3) }}
 					{{ form_row(form.delivery.address_line_4) }}
 				</div>
-				<div class="column right">
+				<div class="col-6">
 					{{ form_row(form.delivery.town) }}
 					{{ form_row(form.delivery.postcode) }}
 					{{ form_row(form.delivery.telephone) }}
@@ -73,9 +81,11 @@
 					}) }}
 				</div>
 			</section>
-			<nav class="checkout-nav">
-				<a href="/checkout" class="button cancel">Back to selection</a>
-				<button type="submit" class="continue">Continue to delivery</button>
+			<nav class="checkout-nav row">
+				<div class="col-12">
+					<a href="/checkout" class="button cancel">Back to selection</a>
+					<button type="submit" class="continue">Continue to delivery</button>
+				</div>
 			</nav>
 		{{ form_end(form) }}
 	</main>

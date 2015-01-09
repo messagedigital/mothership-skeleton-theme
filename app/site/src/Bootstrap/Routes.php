@@ -22,7 +22,7 @@ class Routes implements RoutesInterface, ContainerAwareInterface
 	{
 //		$this->enableSSL($router);
 
-		$router->add('ms-site.subscribe.action', '/mailing-list/subscribe', 'Mothership:Site::Controller:Module:Subscribe#subscribeAction')
+		$router->add('app.subscribe.action', '/mailing-list/subscribe', 'Mothership:Site::Controller:Module:Subscribe#subscribeAction')
 			->setMethod('POST');
 	}
 

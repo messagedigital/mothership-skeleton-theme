@@ -1,9 +1,26 @@
-{% extends 'Mothership:Site::templates/base' %}
+{% extends 'Mothership:Site::templates:base' %}
 
 {% block content %}
 	<main class="content" id="content" role="main">
-		{% block exampleblock %}
-			{% include 'Mothership:Site::module:home:example' %}
+		{% if page.content.header.image.value %}
+			{{ getResizedImage(page.content.header.image, 1164, 400) }}
+		{% endif %}
+		{# Main promo #}
+		<div class="row">
+			<div class="col-12">
+				<h1>{{ page.content.header.header }} <small>{{ page.content.header.subheader }}</small></h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12">
+				{{ page.content.content.content|raw }}
+			</div>
+		</div>
+
+		{# Newsletter #}
+		{% block newsletter %}
+			{% include '@Mothership:Site::module:home:newsletter' %}
 		{% endblock %}
 	</main>
 {% endblock %}

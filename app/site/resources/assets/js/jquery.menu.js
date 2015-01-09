@@ -1,7 +1,7 @@
 /**
  * Navigation pushdown menu
  *
- * This plugin corseponds with the navigation menu for Mothership sites
+ * This plugin corseponds with the navigation menu for Mothership Nucleus .
  *
  * This is a *private* plugin, and should only be used by Message Digital Design.
  *
@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
 
 	// Offset the wrapper
 	wrapper.css({
-		marginTop: '-70px'
+		marginTop: '-56px'
 	});
 
 	// Click on main navigation
@@ -55,7 +55,7 @@ jQuery(document).ready(function($) {
 			open = false;
 
 			wrapper.css({
-				marginTop: '-70px'
+				marginTop: '-56px'
 			});
 
 			wrapper.children('.sub-navigation').remove();

@@ -5,30 +5,34 @@
 		<p>Successfully made your purchase</p>
 	</div>
 	<main class="checkout" id="main-content">
-		<h1>Checkout</h1>
-		<section class="progress">
-			<div>
-				<p><strong>Stage 01</strong> Your selection</p>
-			</div>
-			<div>
-				<p><strong>Stage 02</strong> Your details</p>
-			</div>
-			<div>
-				<p><strong>Stage 03</strong> Delivery details</p>
-			</div>
-			<div>
-				<p><strong>Stage 04</strong> Payment</p>
-			</div>
-			<div class="active">
-				<p><strong>Stage 05</strong> Confirmation</p>
+		<section class="row">
+			<div class="col-12">
+				<h1>Checkout</h1>
+				<div class="progress">
+					<div>
+						<p><strong>Stage 01</strong> Your selection</p>
+					</div>
+					<div>
+						<p><strong>Stage 02</strong> Your details</p>
+					</div>
+					<div>
+						<p><strong>Stage 03</strong> Delivery details</p>
+					</div>
+					<div>
+						<p><strong>Stage 04</strong> Payment</p>
+					</div>
+					<div class="active">
+						<p><strong>Stage 05</strong> Confirmation</p>
+					</div>
+				</div>
 			</div>
 		</section>
-		<section class="delivery-details">
-			<section class="confirmation">
+		<section class="delivery-details row">
+			<div class="confirmation col-4">
 				<h3>Confirmation</h3>
 				<p>A copy of this confirmation has been emailed to {{ order.userEmail }}</p>
-			</section>
-			<div class="address">
+			</div>
+			<div class="address col-4">
 				<h3>Delivered to</h3>
 			{% if order.getAddress('delivery') %}
 				{% set delivery = order.getAddress('delivery') %}
@@ -47,7 +51,7 @@
 				</div>
 			{% endif %}
 			</div>
-			<div class="billing">
+			<div class="billing col-4">
 				<h3>Billed to</h3>
 				{% if order.getAddress('billing') %}
 					{% set billing = order.getAddress('billing') %}
@@ -66,41 +70,47 @@
 				{% endif %}
 			</div>
 		</section>
-		<section class="selection">
-			<table>
-				<colgroup>
-					<col width="60">
-	                <col>
-	                <col width="160">
-	                <col width="160">
-	            </colgroup>
-				<thead>
-					<tr>
-						<th class="item">Item(s)</th>
-						<th></th>
-						<th class="quantity">Qty</th>
-						<th class="price">Price</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for item in items %}
+		<section class="selection row">
+			<div class="col-12">
+				<table>
+					<colgroup>
+						<col width="60">
+		                <col>
+		                <col width="160">
+		                <col width="160">
+		            </colgroup>
+					<thead>
 						<tr>
-							<td class="image">
-								{{ getResizedImage(item.first.product.getUnitImage(item.first.unit, 'default'), 80, 80) }}
-							</td>
-							<td class="item">
-								{{ item.first.productName }} <span>{{ item.first.options }}</span></td>
-							<td class="quantity">{{ item.quantity }}
-							<td class="price"><strong>{{ item.sum('basePrice')|price }}</strong></td>
+							<th class="item">Item(s)</th>
+							<th></th>
+							<th class="quantity">Qty</th>
+							<th class="price">Price</th>
 						</tr>
-					{% endfor %}
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						{% for item in items %}
+							<tr>
+								<td class="image">
+									{{ getResizedImage(item.first.product.getUnitImage(item.first.unit, 'default'), 80, 80) }}
+								</td>
+								<td class="item">
+									{{ item.first.productName }} <span>{{ item.first.options }}</span></td>
+								<td class="quantity">{{ item.quantity }}
+								<td class="price"><strong>{{ item.sum('basePrice')|price }}</strong></td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</section>
+		<section class="row">
 			{% import 'Message:Mothership:Ecommerce::checkout:totals' as totals %}
 			{{ totals.renderTotals(order, ['discount', 'subTotal', 'shipping', 'voucher', 'amountDue'], 'amountPaid') }}
 		</section>
-		<nav class="checkout-nav">
-			<a href="/shop" class="button continue">Continue 'Shopping'</a>
+		<nav class="checkout-nav row">
+			<div class="col-12">
+				<a href="/shop" class="button continue">Continue 'Shopping'</a>
+			</div>
 		</nav>
 	</main>
 

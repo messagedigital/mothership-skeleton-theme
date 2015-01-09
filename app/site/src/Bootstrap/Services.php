@@ -14,10 +14,10 @@ class Services implements ServicesInterface
 	{
 		$services->extend('cms.page.types', function($collection, $c) {
 			$collection
+				->add(new PageType\Home)
 				->add(new PageType\Generic)
 				->add(new PageType\Product)
 				->add(new PageType\ProductListing)
-				->add(new PageType\Home)
 				->add(new PageType\OurStory)
 				->add(new PageType\RedirectToFirstChild)
 			;
@@ -49,7 +49,7 @@ class Services implements ServicesInterface
 			return $locations;
 		});
 
-		$services['ms-site.form.subscribe'] = function($c) {
+		$services['app.form.subscribe'] = function($c) {
 			return new \Mothership\Site\Form\Subscribe;
 		};
 
@@ -86,7 +86,7 @@ class Services implements ServicesInterface
 		});
 
 		// CMS
-		$services['ms-site.shop.product_page_loader'] = function($c) {
+		$services['app.shop.product_page_loader'] = function($c) {
 			return new \Mothership\Site\Shop\ProductPageLoader($c['cms.page.loader'], $c['cms.page.content_loader']);
 		};
 	}

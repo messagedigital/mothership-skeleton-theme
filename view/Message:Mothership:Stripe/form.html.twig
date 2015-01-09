@@ -35,6 +35,6 @@
 	{% endif %}
 	<div class="form-row total">
 		Total: {{ payable.payableAmount | price(payable.payableCurrency) }}
-		<button type="submit" class=" button continue">Make payment</button>
+		<button type="submit" class="continue">Make payment</button>
 	</div>
 {{ form_end(form) }}

@@ -21,6 +21,7 @@ $(function() {
 		children   = thumbnails.children('li'),
 		count      = thumbnails.children().length,
 		loader     = $('<div class="spinner"></div>').insertAfter(image).hide(),
+		push       = 0,
 		offset     = 0,
 		totalWidth = 0,
 		maxOffset  = 0,
@@ -31,11 +32,12 @@ $(function() {
 	 */
 
 	if (container.is(':visible')) {
-		var modalhref = image.attr('href');
-			modal = $('<div class="modal-image"><img src="' +modalhref+ '"/><span>Click to close</span></div>').insertAfter(content);
+		var modalhref = image.attr('href'),
+			modal = $('<div class="modal-image" style="height: 0px;"><img src="' +modalhref+ '"/><span>Click to close</span></div>').insertAfter(content);
+
 
 		modal.css('height', 0);
-	};
+	}
 
 
 	/**
@@ -52,14 +54,6 @@ $(function() {
 		// Set wrap variable
 		var wrap = thumbnails.parent();
 
-		// Calculate total width of children
-		children.each(function() {
-			totalWidth += $(this).outerWidth(true);
-		});
-
-		// Set thumbnails width to total width
-		thumbnails.css('width', totalWidth);
-
 		/**
 		 * Add gallery controls to the thumbnails, be able to cycle through a block
 		 * or each one indervidually
@@ -69,18 +63,46 @@ $(function() {
 		var nextBtn = $('<button class="next" data-right>next</button>').insertAfter(wrap),
 		    prevBtn = $('<button class="previous" data-left>previous</button>').insertBefore(wrap);
 
-		// If offset is 0 disabled previous button
-		if (offset == 0) {
-			prevBtn.addClass('disabled');
-		}
 
-		/**
-		 * Thumbnail slide function, calculates the current offset and checks which direction
-		 * the thumbnails are ment to go
-		 */
+		$(window).on('resize', function() {
 
-		// Set max offset to the width of one Thumbnail element
-		maxOffset = (count - 4) * (parseInt(totalWidth, 10) / parseInt(count, 10));
+			var wrapWidth = wrap.width();
+
+			$('.thumbnails li').each(function() {
+				var setWidth = wrapWidth / 4;
+
+				$(this).css('width', setWidth);
+			});
+
+			totalWidth = children.width() * count;
+
+			// Set thumbnails width to total width
+			thumbnails.css('width', totalWidth);
+
+			/**
+			 * Thumbnail slide function, calculates the current offset and checks which direction
+			 * the thumbnails are ment to go
+			 */
+
+			// Set max offset to the width of one Thumbnail element
+			maxOffset = (count - 4) * (parseInt(totalWidth, 10) / parseInt(count, 10));
+
+			// If offset is 0 disabled previous button
+			if (offset === 0) {
+				prevBtn.addClass('disabled');
+			}
+
+			/**
+			 * Calulation for push amount on the thumbnail carousel. Amount should be
+			 * set to the width of one thumbnail.
+			 */
+
+			// Set push value
+			push = parseInt(totalWidth, 10) / parseInt(count, 10);
+
+			console.log(push);
+
+		}).trigger('resize');
 
 		// Slide caluclation for sliding each thumb element
 		var slide = function(distance) {
@@ -105,14 +127,6 @@ $(function() {
 			thumbnails.animate({'margin-left': -offset});
 		};
 
-		/**
-		 * Calulation for push amount on the thumbnail carousel. Amount should be
-		 * set to the width of one thumbnail.
-		 */
-
-		// Set push value
-		var push = parseInt(totalWidth, 10) / parseInt(count, 10);
-
 		// Move carousel right
 		nextBtn.on('click', function() {
 
@@ -124,7 +138,7 @@ $(function() {
 
 			if (offset == maxOffset) {
 				$(this).addClass('disabled');
-			};
+			}
 
 			return false;
 		});
@@ -137,12 +151,13 @@ $(function() {
 			nextBtn.removeClass('disabled');
 
 			// Set disabled classes on controls
-			if (offset == 0) {
+			if (offset === 0) {
 				$(this).addClass('disabled');
-			};
+			}
 
 			return false;
 		});
+
 	}
 
 	/**
@@ -256,6 +271,9 @@ $(function() {
 		content.delay(500).slideDown();
 	});
 
+	// IE8 Fix
+	$('.modal-image').click();
+
 	// Resize modal when open
 	$(window).on('resize', function() {
 
@@ -268,6 +286,7 @@ $(function() {
 			modal.css({
 				height: imgHeight
 			});
-		};
+		}
+
 	}).trigger('resize');
 });

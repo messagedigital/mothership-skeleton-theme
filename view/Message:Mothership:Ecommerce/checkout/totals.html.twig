@@ -4,7 +4,7 @@
 
 {% set amountDue = 0 %}
 {% set amountPaid = order.totalGross %}
-	<section class="totals">
+	<div class="totals col-4">
 		{% if 'subTotal' in partsToRender %}
 			<div class="subtotal">
 				<span>Subtotal</span>
@@ -70,5 +70,5 @@
 				<span data-checkout-live-update>{{ amountPaid|price }}</span>
 			</div>
 		{% endif %}
-	</section>
+	</div>
 {% endmacro %}

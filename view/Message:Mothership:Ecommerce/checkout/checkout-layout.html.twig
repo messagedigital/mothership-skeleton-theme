@@ -6,8 +6,7 @@
 	{{ parent() }}
 
 	{% stylesheets
-
-	output='/assets/css/ms-site_checkout-*.css'
+	output='/assets/css/app_checkout-*.css'
 	filter='csscogulerewrite,?cssmin'
 	%}
 	<link rel="stylesheet" href="{{ asset_url }}">
@@ -21,7 +20,7 @@
 
 	{% javascripts
 
-	output='/assets/js/ms-site_checkout-*.js'
+	output='/assets/js/app_checkout-*.js'
 	filter='?jsmin'
 	%}
 	<script src="{{ asset_url }}"></script>
