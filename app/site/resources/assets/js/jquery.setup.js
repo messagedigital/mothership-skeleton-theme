@@ -1,5 +1,5 @@
 /**
- * Real Stars are Rare jQuery
+ * Mothership Site jQuery
  *
  * All general site scripts are to be contained here
  *
