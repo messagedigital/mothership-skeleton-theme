@@ -1,22 +1,30 @@
 <header class="header" role="banner" id="top">
 	{# Site logo #}
 	<h1 class="logo">
-		<a href="/">Mothership</a>
+		<a href="/">{{app.cfg.app.name }}</a>
 	</h1>
 
 	{# Shop Access #}
 	{% block shopaccess %}
-		{% include '@Mothership:Site::module:header:shopaccess' %}
+		{% include '@Mothership:Site::module:menu:shopaccess' %}
 	{% endblock %}
 
 	{# Main navigation #}
 	{% block navigation %}
-		{% include '@Mothership:Site::module:header:navigation' %}
+		<nav class="navigation row nav-offcanvas" role="navigation">
+			{{
+				render(controller('Mothership:Site::Controller:Module:Menu#menu', {
+					currentPage: page
+				}))
+			}}
+		</nav>
 	{% endblock %}
 
 	{# Site search #}
 	{% block search %}
-		{% include '@Mothership:Site::module:header:search' %}
+		<div class="search col-6 form-inline">
+			{{ render(controller('Message:Mothership:CMS::Controller:Module:Search#search')) }}
+		</div>
 	{% endblock %}
 
 	{# Basket #}
