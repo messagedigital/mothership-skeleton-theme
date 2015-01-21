@@ -1,34 +1,17 @@
 /* ======================================================= */
 /*                                                         */
 /*                                                         */
-/*    Skeleton theme style                                 */
+/*    Skeleton Basic CSS                                   */
 /*                                                         */
 /*                                                         */
 /* ======================================================= */
 /*
-/*
-/*    Development by Message
-/*    http://www.message.co.uk
-/*
-/*    Style Sheet v1.0
-/*    Created by Richard McCartney
+/*    Mothership
+/*    http://mothership.ec
 /*
 /*
-/* ======================================================= */
-/*
-/*
-/*    Skeleton Theme
-/*
-/*    This is a basic theme created by Richard McCartney for
-/*    Mothership. You may use this as a base for your future eCommerce
-/*    website or start fresh with a new design.
-/*
-/*    No styles in this theme are system specific more controlling
-/*    the main asethetic feel and overall placement of elements for
-/*    this eCommerce site.
-/*
-/*
-/*    Table of Content
+/* ======================================================= *//*
+/*    Table of Contents
 /* ------------------------------------------------------- */
 /*
 /*
@@ -315,8 +298,10 @@ h5 small {
     margin: .5em 0;
 }
 
-abbr[title] {
+abbr[title],
+dfn[title] {
     border-bottom: 1px dotted;
+    cursor: help;
 }
 
 .page-header {
@@ -447,6 +432,10 @@ sup {
 
 sub {
     bottom: -.25em;
+}
+
+del {
+    text-decoration:  line-through;
 }
 
 
