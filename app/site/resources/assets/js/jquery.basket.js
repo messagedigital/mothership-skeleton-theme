@@ -138,7 +138,7 @@ jQuery(document).ready(function($) {
 	/**
 	 * Basket functionality
 	 *
-	 * This plugin corseponds with the Off canvas basket for Real Stars are Rare.
+	 * This plugin corseponds with the Off canvas basket for Mothership Site.
 	 *
 	 * This is a *private* plugin, and should only be used by Message Digital Design.
 	 *

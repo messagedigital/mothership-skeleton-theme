@@ -1,5 +1,4 @@
 {% stylesheets
-	'@Mothership:Site::resources/assets/css/reset.css'
 	'@Mothership:Site::resources/assets/css/basic.css'
 	'@Mothership:Site::resources/assets/css/layout.css'
 	'@Mothership:Site::resources/assets/css/fonts.css'
@@ -13,25 +12,4 @@
 <link rel="stylesheet" href="{{ asset_url }}">
 {% endstylesheets %}
 
-{% stylesheets
-	'@Mothership:Site::resources/assets/css/ie8.css'
-
-	output='/assets/css/ie8.css'
-	filter='csscogulerewrite,?cssmin'
-%}
-	<!--[if IE 7]>
-	<link rel="stylesheet" href="{{ asset_url }}">
-	<![endif]-->
-{% endstylesheets %}
-
-{% stylesheets
-	'@Mothership:Site::resources/assets/css/ie9.css'
-
-	output='/assets/css/ie9.css'
-	filter='csscogulerewrite,?cssmin'
-%}
-	<!--[if IE 7]>
-	<link rel="stylesheet" href="{{ asset_url }}">
-	<![endif]-->
-{% endstylesheets %}
 

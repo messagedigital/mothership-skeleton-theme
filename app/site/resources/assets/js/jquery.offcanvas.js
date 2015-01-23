@@ -1,7 +1,7 @@
 /**
  * Navigation functionality
  *
- * This plugin corseponds with the Off canvas basket for Mothership
+ * This plugin corseponds with the ading to Navigation.
  *
  * This is a *private* plugin, and should only be used by Message Digital Design.
  *
@@ -84,8 +84,11 @@ jQuery(document).ready(function($) {
 		});
 	});
 
-	$(window).on('resize', function() {
-		closeCanvas();
+	$(window).resize(function() {
+
+		if ($(".tagline").css("display") == "block" ){
+			closeCanvas();
+		}	
 
 		// Check if the site is below 768px width
 		if ($('.container').css('max-width') == '768px') {
@@ -96,6 +99,6 @@ jQuery(document).ready(function($) {
 			navigation.css('margin-left', 0);
 		}
 
-	}).trigger('resize');
+	});
 
 });

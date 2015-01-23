@@ -1,36 +1,18 @@
 /* ======================================================= */
 /*                                                         */
 /*                                                         */
-/*    Skeleton theme style                                 */
+/*    Skeleton Theme CSS                                   */
 /*                                                         */
 /*                                                         */
 /* ======================================================= */
 /*
-/*
-/*    Development by Message
-/*    http://www.message.co.uk
-/*
-/*    Style Sheet v1.0
-/*    Created by Richard McCartney
-/*
+/*    Mothership
+/*    http://mothership.ec
 /*
 /* ======================================================= */
-/*
-/*
-/*    Skeleton Theme
-/*
-/*    This is a basic theme created by Richard McCartney for
-/*    Mothership. You may use this as a base for your future eCommerce
-/*    website or start fresh with a new design.
-/*
-/*    No styles in this theme are system specific more controlling
-/*    the main aesthetic feel and overall placement of elements for
-/*    this eCommerce site.
-/*
-/*
-/*    Table of Content
+
+/*    Table of Contents
 /* ------------------------------------------------------- */
-/*
 /*
 /*    #Header & Shop access
 /*    #Home page
@@ -66,9 +48,11 @@
     margin: 0;
 }
 
-.access .nav-open {
+.access .nav-open,
+.access .nav-close {
     display: none;
 }
+
 
 
 /*
@@ -237,25 +221,32 @@
  * Navigation
  */
 
-
 .navigation {
     position: relative;
     z-index: 2;
-    padding: 0 1.0309278350515463%;
+    padding: 0;
 
     float: left;
 
     width: 100%;
 
-    background: #EEE;
+    font-family: "Bank Gothic W01 Medium";
+    text-transform: uppercase;
+
+    background: #FFF;
 }
 
-.navigation ol,
+.navigation ol {
+    text-align: center;
+    right: -145px;
+    position: relative;
+}
+
 .navigation ul,
 .navigation li,
 .subnav-wrapper ul,
 .subnav-wrapper li {
-    float: left;
+    display: inline-block;
 }
 
 .navigation ol,
@@ -264,62 +255,104 @@
     max-width: 100%;
 }
 
-.navigation li,
-.subnav-wrapper li {
+.navigation li {
     width: auto;
-    margin: 0 20px 0 0;
-    padding: 20px 0;
+    margin: 0 30px 0 0;
 
     list-style-type: none;
 }
 
-.navigation a,
-.subnav-wrapper a {
+.navigation li:last-child {
+    margin-right: 0;
+}
+
+.navigation a {
 
     float: left;
 
     height: 100%;
 
+    text-decoration: none;
+
+    color: #121212;
+    border-bottom: 3px solid #fff;
+    padding: 10px 0;
+
+}
+
+.navigation a:hover {
+    border-bottom: 3px solid #be8e2d;
 }
 
 .navigation .current > a,
-.sub-navigation .current > a {
-    color: #3071A9;
+.navigation a.current {
+    color: #be8e2d;
+    position: relative;
 }
 
+.navigation a.current:after {
+    font-family: "FontAwesome";
+    font-size: 2em;
+    content: '\f0d8';
+    color: #121212;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    pointer-events: none
+}
+
+.navigation a.current:hover {
+    border-bottom: 3px solid #fff;
+}
 
 /*
  * Sub navigation
  */
 
-
 .subnav-wrapper,
 .sub-navigation {
-    position: absolute;
+    position: relative;
     z-index: 1000;
     left: 0;
+    right: 0;
 
     display: none;
     float: left;
 
     width: 100%;
-
-    background: #DDD;
+    height: auto;
+    background: #131313;
 }
 
 .sub-navigation ul {
     margin: 0;
 }
 
+.subnav-wrapper li {
+    padding: 10px;
+    font-size: 0.85em;
+    margin-bottom: 0;
+}
+
+.subnav-wrapper a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.subnav-wrapper a:hover {
+    text-decoration: underline;
+}
+
 .subnav-wrapper {
     position: relative;
     z-index: 1;
 
-    display: block;
+    display: none;
 
     -webkit-transition: margin .2s;
-         -o-transition: margin .2s;
-            transition: margin .2s;
+    -o-transition: margin .2s;
+    transition: margin .2s;
 }
 
 .sub-navigation .current a,
@@ -327,16 +360,21 @@
     color: #3071a9;
 }
 
-.no-js .navigation li:hover .sub-navigation {
-    position: absolute;
-    z-index: 1;
-    top: 56px;
-    padding: 0 20px;
+.subnav-wrapper ol {
+    width: 1164px;
+    margin: auto;
+    list-style: none;
 
-    display: block;
+    padding-left: 280px;
 }
 
+.mobile-back {
+    display: none;
+}
 
+.no-js .navigation li:hover .sub-navigation {
+    display: none;
+}
 /*    Home page
 /* ------------------------------------------------------- */
 
