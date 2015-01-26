@@ -1,5 +1,2 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="initial-scale=1.0, width=device-width, height=device-height"/>
-<meta name="description" content="{{ page.metaDescription|default(page.title ~ ' | ' ~ app.cfg.app.name) }}">
-<title>{% block title %}{{ page.metaTitle|default(page.title ~ ' | ' ~ app.cfg.app.name) }}{% endblock %}</title>
+{% include 'Message:Mothership:CMS::modules:meta' %}
 <link rel="icon" type="image/png" href="/cogules/Mothership:Site/images/favicon.png">
