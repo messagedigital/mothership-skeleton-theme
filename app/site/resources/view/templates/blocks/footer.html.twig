@@ -8,17 +8,20 @@
 	{{ render(controller('Mothership:Site::Controller:Module:Menu#footer')) }}
 	<section class="col-3">
 		<h4>Social</h4>
-
-		{{
-			render(controller('Message:Mothership:CMS::Controller:Module:Social#share', {
-				page: page
-			}))
-		}}
-
-		{{
-			render(controller('Message:Mothership:CMS::Controller:Module:Social#links'))
-		}}
-
+		<ul class="social">
+			<li class="twitter">
+				<a href="https://twitter.com/">Twitter</a>
+			</li>
+			<li class-"instagram">
+				<a href="http://instagram.com/">Instagram</a>
+			</li>
+			<li class="facebook">
+				<a href="https://www.facebook.com/">Facebook</a>
+			</li>
+			<li class="pinterest">
+				<a href="http://www.pinterest.com/">Pinterest</a>
+			</li>
+		</ul>
 		<section class="newsletter row">
 			<h3>Keep up to date with our newsletter</h3>
 			{{
