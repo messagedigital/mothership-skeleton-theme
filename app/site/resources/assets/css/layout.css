@@ -246,7 +246,7 @@
         width: 100%;
         max-width: 768px;
         margin: 0;
-        padding: 0;
+        padding: 0 5px;
     }
 
     .row {
