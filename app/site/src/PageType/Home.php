@@ -37,29 +37,29 @@ class Home implements PageTypeInterface
 
 	public function setFields(FieldFactory $factory)
 	{
-		$factory->addGroup('header', 'Header')
-			->add($factory->getField('file', 'image', 'Image')->setAllowedTypes(File\Type::IMAGE))
+		$factory->addGroup('carousel', 'Carousel')
+			->setRepeatable()
+			->add($factory->getField('file', 'image', 'Image')->setAllowedTypes(File\Type::IMAGE)->setFieldOptions([
+				'constraints' => [
+					new Constraints\NotBlank
+				]
+			]))
 			->add($factory->getField('text', 'header', 'Header')->setFieldOptions([
 				'constraints' => [
 					new Constraints\NotBlank
 				]
 			]))
 			->add($factory->getField('text', 'subheader', 'Sub-header'))
-			->add($factory->getField('link', 'link', 'Link')->setScope('cms'))
-			->add($factory->getField('choice', 'link_colour', 'Link colour')->setFieldOptions([
+			->add($factory->getField('choice', 'overlay_pos', 'Overlay Position')->setFieldOptions([
 				'constraints' => [
 					new Constraints\NotBlank,
 				],
-				'multiple' => false,
-				'expanded' => false,
-				'choices'  => [
-					'black' => 'Black',
-					'white' => 'White',
-					'grey'  => 'Grey',
-					'red'   => 'Red',
-					'blue'  => 'Blue',
+				'choices' => [
+					'left'  => 'Left',
+					'right' => 'Right',
 				],
 			]))
+			->add($factory->getField('link', 'link', 'Link')->setScope('cms'))
 		;
 
 		$factory->addGroup('promos', 'Promos')

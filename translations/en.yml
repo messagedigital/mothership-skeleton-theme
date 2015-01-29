@@ -1,11 +1,12 @@
 page:
   home:
-    header:
-      name: Header
-      description: The first row of content on the page
+    carousel:
+      name: Carousel
+      description: The slides for the carousel
+      singularName: carousel slide
     promos:
       name: Promos
-      description: The promo thanks links to another page
+      description: A promo which links to another page
       singularName: promo
     content:
       name: Content
