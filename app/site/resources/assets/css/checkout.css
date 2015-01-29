@@ -29,6 +29,10 @@
             box-sizing: border-box;
 }
 
+.basket-icon {
+    display: none;
+}
+
 /* Progress
  *
  * Main progress bar which runs across the top of the Checkout.
