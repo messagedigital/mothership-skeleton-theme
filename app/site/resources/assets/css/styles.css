@@ -123,10 +123,6 @@
     margin-right: -300px;
 
     color: #FFF;
-
-    -webkit-transition: margin .4s;
-         -o-transition: margin .4s;
-            transition: margin .4s;
 }
 
 .basket .contents {
@@ -229,6 +225,7 @@
     padding: 0 10px;
 
     float: left;
+    clear: both;
 
     width: 100%;
 

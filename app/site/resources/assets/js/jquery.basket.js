@@ -146,7 +146,7 @@ jQuery(document).ready(function($) {
 	 * @author Richard McCartney <richard@message.co.uk>
 	 */
 
-	var container = $('.container'),
+	var container = $('#container'),
 		basket    = $('.basket'),
 		link      = $('.basket-icon'),
 		close     = $('.close'),
@@ -165,13 +165,9 @@ jQuery(document).ready(function($) {
 
 		// This only counts for navigation off canvas
 		if (mobile === true) {
-			basket.css('margin-right', 0);
-			container.css('left', -300);
-		} else {
-			basket.css('margin-right', 0);
-			container.css('left', -300);
+			basket.animate({'marginRight': 0}, 250);
+			container.animate({'left': offSet}, 250);
 		}
-
 	}
 
 	// Close off canvas
@@ -179,8 +175,8 @@ jQuery(document).ready(function($) {
 
 		open = false;
 
-		container.css('left', 0);
-		basket.css('margin-right', offSet);
+		container.animate({'left': 0}, 250);
+		basket.animate({'marginRight': offSet}, 250);
 
 	}
 

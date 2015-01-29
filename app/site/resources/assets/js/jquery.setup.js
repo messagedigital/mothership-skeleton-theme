@@ -8,6 +8,12 @@
 
 jQuery(document).ready(function($) {
 
+	var resizeTimeout;
+	$(window).resize(function() {
+	    clearTimeout(resizeTimeout);
+	    resizeTimeout = setTimeout(function(){$(window).trigger('resize-end')}, 500);
+	});
+
     // Set JS class
     $('.no-js').removeClass('no-js').addClass('js');
 

@@ -11,7 +11,7 @@
 
 jQuery(document).ready(function($) {
 
-	var container = $('.container'),
+	var container = $('#container'),
 		navigation    = $('.nav-offcanvas'),
 		link      = $('.nav-open'),
 		close     = $('.close'),
@@ -28,9 +28,9 @@ jQuery(document).ready(function($) {
 
 		// This only counts for navigation off canvas
 		if (mobile === true) {
-			container.css('left', -offSet);
+			container.animate({'left': -offSet}, 250);
 			// navigation.css('margin-left', 0);
-			navigation.animate({'marginLeft': 0}, 200);
+			navigation.animate({'marginLeft': 0}, 250);
 		}
 
 	}
@@ -40,9 +40,9 @@ jQuery(document).ready(function($) {
 
 		open = false;
 		if (mobile === true) {
-			container.css('left', 0);
+			container.animate({'left': 0}, 250);
 			// navigation.css('margin-left', offSet);
-			navigation.animate({'marginLeft': offSet}, 200);
+			navigation.animate({'marginLeft': offSet}, 250);
         }
 	}
 
@@ -85,22 +85,22 @@ jQuery(document).ready(function($) {
 		});
 	});
 
-	$(window).resize(function() {
-
+	var checkMobile = function() {
 		if ($(".tagline").css("display") == "block" ){
 			closeCanvas();
-		}	
+		}
 
-		console.log(mobile);
 		// Check if the site is below 768px width
-		if ($('.container').width() < 768) {
+		if (window.innerWidth <= 768) {
 			mobile = true;
 			navigation.animate({'marginLeft': offSet}, 0);
 		} else {
 			mobile = false;
 			navigation.css('margin-left', 'auto');
 		}
+	}
 
-	});
+	$(window).on('resize-end', checkMobile);
+	$(window).on('resize', checkMobile);
 
 });
