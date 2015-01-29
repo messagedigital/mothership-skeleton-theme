@@ -1,37 +1,19 @@
 <section class="carousel">
 	<ul>
+		{% for slide in page.content.carousel %}
 		<a href="#">
 			<li>
-				<img src="/resize/files/banner-image_AUTOx500-203594.jpg">
+				<img src="{{ getResizedUrl(slide.image, 203594, 500) }}">
 				<div class="wrap">
-					<div class="overlay overlay-right">
-						<h2>Nullam nulla eros, ultricies sit amet</h2>
-						<p>Stibulum mollis diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+					{% if not slide.header.value is empty or not slide.subheader.value is empty %}
+					<div class="overlay overlay-{{ slide.overlay_pos }}">
+						{% if not slide.header.value is empty %}<h2>{{ slide.header }}</h2>{% endif %}
+						{% if not slide.subheader.value is empty %}<p>{{ slide.subheader }}</p>{% endif %}
 					</div>
+					{% endif %}
 				</div>
 			</li>
 		</a>
-		<a href="#">
-			<li>
-				<img src="/resize/files/banner-image_AUTOx500-203594.jpg">
-				<div class="wrap">
-					<div class="overlay overlay-left">
-						<h2>Cras sagittis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h2>
-						<p>Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros.</p>
-					</div>
-				</div>
-			</li>
-		</a>
-		<a href="#">
-			<li>
-				<img src="/resize/files/banner-image_AUTOx500-203594.jpg">
-				<div class="wrap">
-					<div class="overlay overlay-left">
-						<h2>Donec posuere vulputate arcu. Pellentesque dapibus hendrerit tortor. Aliquam erat volutpat.</h2>
-						<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-					</div>
-				</div>
-			</li>
-		</a>
+		{% endfor %}
 	</ul>
 </section>

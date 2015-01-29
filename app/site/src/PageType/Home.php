@@ -44,11 +44,7 @@ class Home implements PageTypeInterface
 					new Constraints\NotBlank
 				]
 			]))
-			->add($factory->getField('text', 'header', 'Header')->setFieldOptions([
-				'constraints' => [
-					new Constraints\NotBlank
-				]
-			]))
+			->add($factory->getField('text', 'header', 'Header'))
 			->add($factory->getField('text', 'subheader', 'Sub-header'))
 			->add($factory->getField('choice', 'overlay_pos', 'Overlay Position')->setFieldOptions([
 				'constraints' => [
