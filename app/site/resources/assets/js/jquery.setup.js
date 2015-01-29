@@ -46,4 +46,39 @@ jQuery(document).ready(function($) {
 		$('.tab-menu li:first-child a').click();
 	})();
 
+	// Carousel functionality
+	$('.carousel ul').carousel({
+		arrows    : true,
+		indicators: true,
+		flexible  : true,
+		interval  : false,
+		speed     : 400,
+		onInteraction: function(e) {
+			e.carousel('stop');
+		}
+	});
+
+	// Returns Toggle
+
+
+	$(function() {
+        var toggleReturnsInput = function() {
+            var val;
+            val = $('#form_resolution').val();
+
+            if ('refund' == val) {
+                $('#form_exchangeUnit').parents('.field').hide(0);
+            }
+            else {
+                $('#form_exchangeUnit').parents('.field').show(0);
+            }
+        };
+
+        $('#form_resolution').change(function() {
+            toggleReturnsInput();
+        });
+
+        toggleReturnsInput();
+    });
+    
 });
