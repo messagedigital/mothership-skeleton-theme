@@ -6,7 +6,6 @@
  * This is a *private* plugin, and should only be used by Message Digital Design.
  *
  * @author Message Digital Design <dev@message.co.uk>
- * @author Richard McCartney <richard@message.co.uk>
  */
 
 jQuery(document).ready(function($) {
@@ -167,6 +166,9 @@ jQuery(document).ready(function($) {
 		if (mobile === true) {
 			basket.animate({'marginRight': 0}, 250);
 			container.animate({'left': offSet}, 250);
+		} else {
+			basket.animate({'marginRight': 0}, 250);
+			container.animate({'left': offSet}, 250);
 		}
 	}
 
@@ -198,9 +200,9 @@ jQuery(document).ready(function($) {
 
 	// close canvas
 	close.on('click', function(event) {
-		event.preventDefault();
-
 		closeCanvas();
+
+		event.preventDefault();
 	});
 
 		// Swipe to close basket

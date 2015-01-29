@@ -2,8 +2,6 @@
  * Mothership Site jQuery
  *
  * All general site scripts are to be contained here
- *
- * @author Richard McCartney <richard@message.co.uk>
  */
 
 jQuery(document).ready(function($) {
