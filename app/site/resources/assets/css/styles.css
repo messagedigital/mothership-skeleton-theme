@@ -489,8 +489,9 @@
     width: 15px;
     height: 15px;
     margin-right: 10px;
-    background: #E2DFCC;
+    background: #999;
     border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
 }
 
 .carousel .indicators li.active {

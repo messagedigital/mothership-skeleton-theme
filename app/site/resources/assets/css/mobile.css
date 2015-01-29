@@ -77,7 +77,7 @@
 		font-size: 2em;
 		cursor: pointer;
 		position: absolute;
-		top: 0;
+		top: 7px;
 		left: 0;
 	}
 
@@ -262,8 +262,53 @@
 
 	.basket-icon {
 		position: absolute;
-		top: 5px;
+		top: 10px;
 		right: 0;
+		margin-top: 0;
+	}
+
+	.carousel {
+		margin-bottom: 0;
+		min-height: 0;
+	}
+
+	.carousel .wrap {
+	    height: 100%;
+	    margin: auto;
+
+	    position: relative;
+	    top: auto;
+	    left: auto;
+	    right: auto;
+ 	}
+
+	.carousel .overlay {
+		position: relative;
+		width: 100%;
+		margin: 0;
+	}
+
+	.carousel .overlay-left {
+	    position: relative;
+	    left: auto;
+	}
+
+	.carousel .overlay-right {
+	    position: relative;
+	    right: auto;
+	}
+
+	.carousel button {
+		display: none;
+	}
+
+	.carousel .indicators {
+	    position: relative;
+	    bottom: -10px
+	}
+
+	.carousel .indicators li {
+		background: #999;
 	}
 
 }
