@@ -336,8 +336,8 @@
     display: none;
 
     -webkit-transition: margin .2s;
-    -o-transition: margin .2s;
-    transition: margin .2s;
+         -o-transition: margin .2s;
+            transition: margin .2s;
 }
 
 .sub-navigation .current a,

@@ -106,9 +106,9 @@
 	}
 
 	.nav-offcanvas {
-		-webkit-transition: margin .4s;
+		/*-webkit-transition: margin .4s;
 		     -o-transition: margin .4s;
-		        transition: margin .4s;
+		        transition: margin .4s;*/
 		margin-left: -300px;
 	}
 

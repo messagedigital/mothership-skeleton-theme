@@ -28,8 +28,9 @@ jQuery(document).ready(function($) {
 
 		// This only counts for navigation off canvas
 		if (mobile === true) {
-			navigation.css('margin-left', 0);
-			container.css('left', 300);
+			container.css('left', -offSet);
+			// navigation.css('margin-left', 0);
+			navigation.animate({'marginLeft': 0}, 200);
 		}
 
 	}
@@ -38,10 +39,10 @@ jQuery(document).ready(function($) {
 	function closeCanvas() {
 
 		open = false;
-
 		if (mobile === true) {
 			container.css('left', 0);
-			navigation.css('margin-left', offSet);
+			// navigation.css('margin-left', offSet);
+			navigation.animate({'marginLeft': offSet}, 200);
         }
 	}
 
@@ -90,13 +91,14 @@ jQuery(document).ready(function($) {
 			closeCanvas();
 		}	
 
+		console.log(mobile);
 		// Check if the site is below 768px width
-		if ($('.container').css('max-width') == '768px') {
+		if ($('.container').width() < 768) {
 			mobile = true;
-			navigation.css('margin-left', offSet);
+			navigation.animate({'marginLeft': offSet}, 0);
 		} else {
 			mobile = false;
-			navigation.css('margin-left', 0);
+			navigation.css('margin-left', 'auto');
 		}
 
 	});
