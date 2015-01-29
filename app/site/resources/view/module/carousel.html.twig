@@ -1,7 +1,7 @@
 <section class="carousel">
 	<ul>
 		{% for slide in page.content.carousel %}
-		<a href="#">
+		{% if not slide.link.value.target is empty %}<a href="{{ slide.link }}">{% endif %}
 			<li>
 				<img src="{{ getResizedUrl(slide.image, 203594, 500) }}">
 				<div class="wrap">
@@ -13,7 +13,7 @@
 					{% endif %}
 				</div>
 			</li>
-		</a>
+		{% if not slide.link.value.target is empty %}</a>{% endif %}
 		{% endfor %}
 	</ul>
 </section>
