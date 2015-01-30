@@ -1,7 +1,7 @@
 /**
  * Navigation pushdown menu
  *
- * This plugin corseponds with the navigation menu for Stoneham.
+ * This plugin corseponds with the navigation menu for Tonic.
  *
  * This is a *private* plugin, and should only be used by Message Digital Design.
  *
@@ -13,31 +13,27 @@ jQuery(document).ready(function($) {
 
 	// Set all required variables
 	var navigation = $('.navigation'),
-		navLink    = navigation.find('ol > li > a'),
+		navLink    = navigation.find('ul > li > a'),
 		backLink   = $('.mobile-back'),
 		open 	   = false;
 
 	// Insert the subnavigation wrapper
-	navigation.after('<div class="subnav-wrapper nav-offcanvas"></div>');
+	navigation.after('<div class="subnav-wrapper"></div>');
 	var wrapper = $('.subnav-wrapper');
 
 	backLink.css({
 		zIndex: '-9999'
-	});
+	})
 
 	// Click on main navigation
 	navLink.on('click', function() {
 
 		var self = $(this),
-			subnav = self.parent().find('.sub-navigation ol');
+			subnav = self.parent().find('.sub-navigation ul');
 
 		// Allow clicks on links without sub navigation
 		if(!self.siblings('.sub-navigation').length) {
 			return;
-		}
-
-		if($('.navigation li').hasClass('current')) {
-			$('.navigation li').removeClass('current')
 		}
 
 		// Open navigation
@@ -70,15 +66,12 @@ jQuery(document).ready(function($) {
 		if (open !== false) {
 			if (open !== self.data('pushid')){
 				closeNav(openNav);
-				$('.navigation li a').removeClass('current');
-				self.addClass('current');
 			}else {
+
 				closeNav();
-				self.removeClass('current');
 			}
 		} else if (open === false) {
 			openNav();
-			self.addClass('current');
 		}
 
 
