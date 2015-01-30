@@ -61,6 +61,8 @@ jQuery(document).ready(function($) {
 			open = false;
 
 		}
+		$(window).unbind('resize.offcanvas');
+		$(window).on('resize.offcanvas', function(){closeNav.call(this)});
 
 		// Open and close if statement
 		if (open !== false) {
@@ -76,7 +78,6 @@ jQuery(document).ready(function($) {
 
 
 		return false;
-
 	});
 
 	$('.mobile-back').on('click', function() {
