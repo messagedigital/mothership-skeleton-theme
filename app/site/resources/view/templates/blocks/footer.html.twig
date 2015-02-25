@@ -22,12 +22,13 @@
 				<a href="http://www.pinterest.com/">Pinterest</a>
 			</li>
 		</ul>
-		<section class="newsletter row">
-			<h3>Keep up to date with our newsletter</h3>
-			{{
-				render(controller('Mothership:Site::Controller:Module:Subscribe#subscribe'))
-			}}
-		</section>
+        {# Uncomment this if Mailing module is installed #}
+        {#<section class="col-3 newsletter form-inline">#}
+            {#<h3>Subscribe to our newsletter</h3>#}
+            {#{{#}
+                {#render(controller('Mothership:Site::Controller:Module:Subscribe#subscribe'))#}
+            {#}}#}
+        {#</section>#}
 	</section>
 </footer>
 <section class="copy row">
