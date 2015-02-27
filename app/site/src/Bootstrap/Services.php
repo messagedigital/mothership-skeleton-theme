@@ -18,7 +18,6 @@ class Services implements ServicesInterface
 				->add(new PageType\Generic)
 				->add(new PageType\Product)
 				->add(new PageType\ProductListing)
-				->add(new PageType\OurStory)
 				->add(new PageType\RedirectToFirstChild)
 			;
 

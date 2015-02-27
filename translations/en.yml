@@ -23,11 +23,6 @@ page:
     cross_sell:
       name: Cross sell
       description: Product pages that will appear under the 'You May Also Like' section
-  our_story:
-    content:
-      name: Content rows
-      description: Rows of content that will appear on the 'Our Story' page. Images and videos that appear with text will alternate between left and right. You cannot display an image and video at the same time, a video will always override the image.
-      singularName: row
 ms.cms.content:
   home:
     confirm: Are you sure you wish to save the home page?
