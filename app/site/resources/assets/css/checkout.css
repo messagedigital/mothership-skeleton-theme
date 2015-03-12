@@ -33,6 +33,11 @@
     display: none;
 }
 
+.checkout .field.inline {
+    clear: both;
+}
+
+
 /* Progress
  *
  * Main progress bar which runs across the top of the Checkout.
